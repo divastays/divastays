@@ -6,6 +6,7 @@
 <title>Home</title>
 </head>
 <body>
+//hi
 <jsp:forward page="showHome"></jsp:forward>
 </body>
 </html>

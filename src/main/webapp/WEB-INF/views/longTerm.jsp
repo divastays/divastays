@@ -805,21 +805,6 @@
 	  </div>
 </div>
 					
-                    
-                    
-                    
-
-
-
-
-
-
-
-
-
-
-
-
 				 <!--  from here get in touch -->
     
     

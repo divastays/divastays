@@ -340,7 +340,7 @@
               <div class="form-row" style="float:left; width:50%;">  
                 <label>
                  <input type="radio"  name="sameName" id="paytm" value="paytm"> &nbsp;<img src="images/paytm-logo.png"><br>
-                 <input type="radio"  name="sameName" id="freecharge" value="freeCharge">&nbsp;&nbsp;<img src="img/freecharge_logo.png"><br>
+                 <input type="radio"  name="sameName" id="freecharge" value="freeCharge">&nbsp;&nbsp;<img src="images/freecharge_logo.png"><br>
                 </label>  
               </div>
                      

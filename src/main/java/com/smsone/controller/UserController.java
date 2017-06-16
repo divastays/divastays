@@ -51,6 +51,13 @@ public class UserController {
 		return "home";
 	}
 	
+	//show HouseInfo Home
+	@RequestMapping(value = "/showHouseInfo/showHome")
+	public String showHome1()
+	{
+		return "redirect:/showHome";
+	}
+	
 	//show short term
 	@RequestMapping(value = "/showShortTerm")
 	public String showShortTerm()
@@ -178,7 +185,23 @@ public class UserController {
 		return "knowMore";
 	}
 	
-	//show Terms and condition page
+	
+	//show HouseInfo know more page
+		@RequestMapping(value = "/showHouseInfo/showKnowMore")
+		public String showKnowMore1()
+		{
+			return "redirect:/showKnowMore";
+		}
+	
+	//show HouseInfo Terms and condition page
+	@RequestMapping(value = "/showHouseInfo/showTermsAndCondition")
+	public String showTermsAndCondition1()
+	{
+		
+		return "redirect:/showTermsAndCondition";
+	}
+	
+	//show  Terms and condition page
 	@RequestMapping(value = "/showTermsAndCondition")
 	public String showTermsAndCondition()
 	{
@@ -190,6 +213,13 @@ public class UserController {
 	public String showHelp()
 	{
 		return "help";
+	}
+	
+	//show HouseInfo help
+	@RequestMapping(value = "/showHouseInfo/showHelp")
+	public String showHelp1()
+	{
+		return "redirect:/showHelp";
 	}
 		
 	//show filter based on requirements

@@ -524,7 +524,7 @@ $(window).ready(function(){
 
 <div class="jumbotron" style="background-color:#ffffff">
   <div class="container text-center">
-      <h1 style="color:#FF0000; font-family:Georgia">Diva Stays</h1>     
+      <h1 style="color:#FF0000; font-family:Georgia">DivaStays</h1>     
     <p style="color:#000000; font-family:"Courier New", Courier, monospace;">Your Friendly  neighborhood hostel</p>
     <h5 style="color:#333333;">now in India</h5>
    <a href="showKnowMore"> <button class="button btn-info">Know More</button></a>

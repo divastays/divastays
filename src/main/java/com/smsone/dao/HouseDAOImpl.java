@@ -75,7 +75,7 @@ public class HouseDAOImpl implements HouseDAO {
 		Criteria criteria = session.createCriteria(House.class);
 		criteria.setFirstResult(offset!=null?offset:0);
 		criteria.setMaxResults(maxResults!=null?maxResults:10);
-		//Criterion c1=Restrictions.eq("address",house.getAddress());
+		Criterion c1=Restrictions.eq("locationArea",house.getLocationArea());
 		//Criterion c2=Restrictions.eq("accomodation",house.getAccomodation());
 		if(house.getRent()==1000)
 		{

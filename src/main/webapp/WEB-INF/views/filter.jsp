@@ -191,7 +191,7 @@
         <strong>Profession</strong> 
         
            <div class="form-group">
-      		<select name="profession" id="select1" name="profession" class="form-control">
+      		<select name="profession" id="profession" class="form-control">
         	<option value="Student">Student</option>
   			<option value="Employee">Employee</option>
       		</select>
@@ -229,7 +229,7 @@
     	</div><!--form group-->
     		<div class="form-group">
       <label>Food Type</label>
-      <select id="Food Type" class="form-control" name="food" onchange="doFilterData();">
+      <select id="food" class="form-control" name="food" onchange="doFilterData();">
       <option value="Both">Both</option>
         <option value="Veg">Veg</option>
         <option value="Non-Veg">non-veg</option>
@@ -371,7 +371,7 @@
      </div><!--3)-->
      
     
-  <div class="col-md-9" style="height:20px">
+  <div id ="showHouse" class="col-md-9" style="height:20px">
       <c:forEach items="${house}" var="house" varStatus="itr">
  		<a href="showHouseInfo/${house.hId}"> <div class="well"  style="background-color: rgb(243,210,230);" style="height:270px">
  		 
@@ -491,17 +491,28 @@ function checkLogin()
         url: "showFilter3",
         data: "food=" + food,
         success: function(response){
+        	alert(response);
         // we have the response
-        $('#info').html(response);
-        $('#name').val('');
-        $('#education').val('');
+        //session.setAttribute("house",response);
+        display(response);
+        //showHouse(response);
         },
         error: function(e){
         alert('Error: ' + e);
         }
         });
         }
+        
+        function showHouse(response) {
+            // and here you show users on page
+            //following code just example
+
+            $('#showHouse').append("<option value='-1'>Select User</option>");
+                for ( var i = 0, len = data.length; i < len; ++i) {
+                    var user = data[i];
+                    $('#allUsers').append("<option value=\"" + user.userId + "\">" + user.userName+ "</option>");
+            }
+        }
 </script>
-${sessionScope.house}
 </body>
 </html>

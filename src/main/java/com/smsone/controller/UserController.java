@@ -515,22 +515,6 @@ public class UserController {
 					return "filter";
 					}
 				}
-				//filter page response with filter
-				@RequestMapping(value="/showFilter2")
-				public String listHouseByFilter(@RequestParam("profession") String profession,@RequestParam("language") String language,@RequestParam("subcategory") String address,@RequestParam("accomodation") String accomodation,@RequestParam("food") String food,@RequestParam("price") Double rent,Model model, Integer offset, Integer maxResults,HttpSession session){
-					House house=new House();
-					house.setAddress(address);
-					//house.setAccomodation(accomodation);
-					house.setRent(rent);
-					house.setFoodPreference(food);
-					model.addAttribute("house", houseService.listHouseByFilter(house,offset, maxResults));
-					model.addAttribute("count", houseService.count());
-					model.addAttribute("offset", offset);
-					//model.addAttribute("url", "showFilter2");
-					return "filter";
-				}
-				
-				
 				//login check
 				@RequestMapping(value = "/login", method = RequestMethod.POST)
 				public @ResponseBody  String login(@RequestParam("email") String email,@RequestParam("password") String password,HttpSession session)
@@ -560,17 +544,34 @@ public class UserController {
 				
 				//filter page response with filter
 				@RequestMapping(value="/showFilter3")
-				public @ResponseBody List<House> listHouseByFilters(@RequestParam("food") String food,Model model, Integer offset, Integer maxResults,HttpSession session){
-					System.out.println("hiiii");
+				public String listHouseByFilters(@RequestParam("food") String food,Model model, Integer offset, Integer maxResults,HttpSession session){
 					House house1=new House();
 					house1.setFoodPreference(food);
 					List<House> house=houseService.listHouseByFilters(house1,offset, maxResults);
 					System.out.println(house);
 					session.setAttribute("house", house1);
-					//model.addAttribute("house", houseService.listHouseByFilters(house,offset, maxResults));
-					//model.addAttribute("count", houseService.count());
-					//model.addAttribute("offset", offset);
+					model.addAttribute("house", houseService.listHouseByFilters(house1,offset, maxResults));
+					model.addAttribute("count", houseService.count());
+					model.addAttribute("offset", offset);
+					model.addAttribute("url", "showFilter2");
+					return "filter";
+				}
+				
+				//filter page response with filter
+				@RequestMapping(value="/showFilter2")
+				public String listHouseByFilter(@RequestParam("profession") String profession,@RequestParam("language") String language,@RequestParam("subcategory") String area,@RequestParam("food") String food,@RequestParam("price") Double rent,Model model, Integer offset, Integer maxResults,HttpSession session){
+					House house=new House();
+					User user=new User();
+					user.setProfession(profession);
+					user.setMotherTongue(language);
+					house.setLocationArea(area);
+					//house.setAccomodation(accomodation);
+					house.setRent(rent);
+					house.setFoodPreference(food);
+					model.addAttribute("house", houseService.listHouseByFilter(house,offset, maxResults));
+					model.addAttribute("count", houseService.count());
+					model.addAttribute("offset", offset);
 					//model.addAttribute("url", "showFilter2");
-					return house;
+					return "filter";
 				}
 }

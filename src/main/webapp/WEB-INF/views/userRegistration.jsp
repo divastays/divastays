@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/registrationForm.css">
 </head>
-<body style="background-image:url(images/formBackground.png)">
+<body style="background-image:url(images/formBackground.jpg)">
    <div class="main-content">
 		<form class="form-basic" method="post" action="saveUser" onSubmit="return UserSubmit()" style="background-color: rgb(243,210,230);">
 
@@ -34,17 +34,17 @@
                     <select name="motherTounge" id="motherTounge" class="form-control selectpicker" required>
                           <option value="">Select Your Mother Tounge</option>
                         <option value="hindi">Hindi</option>
-                        <option value="marathi">मराठी</option>
+                        <option value="marathi">à¤®à¤°à¤¾à¤ à¥€</option>
                         <option value="english">English</option>
-                        <option value="bengali">বাংলা</option>
-                         <option value="telugu">తెలుగు</option>
-                          <option value="tamil">Tamiḻ</option>
-                         <option value="urdu">اُردُو</option>
-                          <option value="kannada">ಕನ್ನಡ</option>
-                           <option value="gujrati">ગુજરાતી</option>
-                            <option value="oriya">ଓଡ଼ିଆ oḍiā</option>
-                             <option value="malyalam">മലയാളം</option>
-                              <option value="sanskrit">saṃskṛtam</option>
+                        <option value="bengali">à¦¬à¦¾à¦‚à¦²à¦¾</option>
+                         <option value="telugu">à°¤à±†à°²à±à°—à±</option>
+                          <option value="tamil">Tamiá¸»</option>
+                         <option value="urdu">Ø§ÙØ±Ø¯ÙÙˆ</option>
+                          <option value="kannada">à²•à²¨à³à²¨à²¡</option>
+                           <option value="gujrati">àª—à«àªœàª°àª¾àª¤à«€</option>
+                            <option value="oriya">à¬“à¬¡à¬¼à¬¿à¬† oá¸iÄ</option>
+                             <option value="malyalam">à´®à´²à´¯à´¾à´³à´‚</option>
+                              <option value="sanskrit">saá¹ƒská¹›tam</option>
                         
                      </select>
                 </label>

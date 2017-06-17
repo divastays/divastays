@@ -196,9 +196,9 @@ Cash payments will be accepted for the security deposit or advance rent up to 48
               <div id="collapsefive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfive" aria-expanded="true" style="background-color: rgb(243,210,230);">
                 <div class="panel-body">
                 <ul>
-               <p><li>NestAway houses are located in various cities across India in reputed society and safe locations. </li> <li>In order to maintain a peaceful environment of the society, nuisance or misconduct of any kind including but not limited to playing loud music beyond the permitted time limit, drinking/smoking in society corridors/ premises and consumption of illegal and banned substances are not allowed in NestAway houses.</li>
+               <p><li>DivaStays houses are located in various cities across India in reputed society and safe locations. </li> <li>In order to maintain a peaceful environment of the society, nuisance or misconduct of any kind including but not limited to playing loud music beyond the permitted time limit, drinking/smoking in society corridors/ premises and consumption of illegal and banned substances are not allowed in DivaStays houses.</li>
 <li>Visitors of the opposite sex are not allowed after 8:00 PM, unless approved by roommates and society office (wherever applicable).</li>
-<li>Internal issues/ fights among the tenants are better resolved among roomies. Involvement of NestAway is not beneficial and hence undesirable.</li>
+<li>Internal issues/ fights among the tenants are better resolved among roomies. Involvement of DivaStays is not beneficial and hence undesirable.</li>
 </p>
 </ul>
                   <!-- List Group End Here -->
@@ -227,7 +227,7 @@ Cash payments will be accepted for the security deposit or advance rent up to 48
                 <ul>
                  <p><li>The offer is only applicable for bookings on last bed.</li>
 
-<li>The tenant must complete 1 month stay with NestAway post move-in, in order to claim the credits.</li>
+<li>The tenant must complete 1 month stay with DivaStays post move-in, in order to claim the credits.</li>
 
 <li>Credits received may vary based on the ongoing promotion.</li>
 
@@ -249,64 +249,9 @@ Cash payments will be accepted for the security deposit or advance rent up to 48
           </div>
         </div><!-- /.sidebar column end here -->
         
-        
-        
-     <footer id="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-6 col-sm-3 column">
-                    <h4>Information</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="">Products</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Benefits</a></li>
-                        <li><a href="">Developers</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-sm-3 column">
-                    <h4>About</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-3 column">
-                    <h4>Stay Posted</h4>
-                    <form>
-                        <div class="form-group">
-                          <input type="text" class="form-control" title="No spam, we promise!" placeholder="Tell us your email">
-                        </div>
-                        <div class="form-group">
-                          <button class="btn btn-info" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
-                        </div>
-                    </form>
-                </div>
-                
-               
-                
-                
-                
-              
-               <div class="col-xs-12 col-sm-3 column">
-                
-                   
-						   <h4>Follow Us</h4>
-							<ul class="social-icon">
-								<li class="bglight-blue"><i class="fa fa-facebook"></i></li>
-								<li class="bgred"><i class="fa fa-google-plus"></i></li>
-								<li class="bgdark-blue"><i class="fa fa-linkedin"></i></li>
-								<li class="bglight-blue"><i class="fa fa-twitter"></i></li>
-							</ul>
-						</div>
-                </div>
-            <br/>
-            <span class="pull-right text-muted small"><a href="http://www.bootstrapzero.com">Diva Stays</a> ©2017 smsone.co.in</span>
-        </div>
-    </footer>
-    
-	<!--/ footer-->
+      
+    <jsp:include page="footer.jsp"></jsp:include>
+	
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 </body>

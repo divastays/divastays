@@ -9,7 +9,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Filter_Search</title>
 <meta charset="utf-8">
-<link href="css/bootstrap.min.css" rel="stylesheet" />     
+<link href="css/bootstrap.min.css" rel="stylesheet" />  
+<link href="css/header.css" rel="stylesheet" />  
+   
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" /><!-- this is for the filter.etc icons-->
  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">

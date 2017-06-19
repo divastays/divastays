@@ -54,29 +54,19 @@ padding-top: 10px;
       </button>
       <a class="navbar-brand" href="showHome"><b><font color=#000000>DivaStays</font></a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
+     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-        
-        </li>
-      </ul>
-    
       <ul class="nav navbar-nav navbar-right">
-      
-        <li><a href="showHelp"><font color=#000000>Help</font></a></li>
+         <li><a href="showHelp"><font color=#000000>Help</font></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 
-
 <div class="container" style="background-color:rgb(243,210,230)">
-	<div class="row">
-		<div class="col-md-12">
-       
-        
-          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+         
             <!-- first Panel start Here -->
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
@@ -85,9 +75,9 @@ padding-top: 10px;
                     Booking Policy <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true" ></span>
                   </a>
                 </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px; style="background-color: rgb(243,210,230);">
-                <div class="panel-body">
+             </div>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px; style="background-color: rgb(243,210,230);">
+              <div class="panel-body">
                 <ul>
 <p><li>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using
 the http://www.mywebsite.com (change this) website and the My Mobile App (change this) mobile
@@ -96,12 +86,12 @@ application (the "Service") operated by My Company (change this) ("us", "we", or
 these Terms. These Terms apply to all visitors, users and others who access or use the Service.</li>
 <li>By accessing or using the Service you agree to be bound by these Terms. If you disagree
 with any part of the terms then you may not access the Service.</li></p>
-</ul>
+               </ul>
                 
                   <!-- List Group End Here -->
                 </div>
               </div>
-            </div>         <!-- first Panel End Here -->
+            </div> <!-- first Panel End Here -->
 
             <!-- second Panel start Here -->
             <div class="panel panel-default">
@@ -111,9 +101,9 @@ with any part of the terms then you may not access the Service.</li></p>
                     Security Deposit <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
                   </a>
                 </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px; style="background-color: rgb(243,210,230);">
-                <div class="panel-body">
+             </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px; style="background-color: rgb(243,210,230);">
+              <div class="panel-body">
                 <ul>
                 <p><li>Tenant needs to pay two months of rent as security deposit.</li>
 <li>Tenant is required to pay a part of the security deposit, referred as the token deposit, at the time of booking.</li>
@@ -126,7 +116,7 @@ Security / token deposit can be paid either by cash or online.</li>
                   <!-- List Group End Here -->
                 </div>
               </div>
-            </div>         <!-- second Panel End Here -->
+            </div> <!-- second Panel End Here -->
 
 
             <!-- third  Panel start Here -->
@@ -148,14 +138,12 @@ Security / token deposit can be paid either by cash or online.</li>
 <li>If booking is cancelled within 3 days of move in, refund would be processed after deducting the rent for the number of days from license start date + move-out charges(INR 999).</li>
 <li>If booking is cancelled after 3 days of move in, then lock in breach charges, notice period shortfall charges, renovation charges etc as per the policies will be applicable.</li>
 <li>Cancellations are allowed only up to 3 days of move in and anything after that would be considered a move out.</li>
-
-
-</p>
-</ul>
+                 </p>
+                </ul>
                   <!-- List Group End Here -->
                 </div>
               </div>
-            </div>         <!-- third Panel End Here -->
+            </div> <!-- third Panel End Here -->
 
             <!-- fouth Panel start Here -->
 
@@ -169,19 +157,19 @@ Security / token deposit can be paid either by cash or online.</li>
               </div>
               <div id="collapsefour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfour" aria-expanded="true" style="background-color: rgb(243,210,230);">
                 <div class="panel-body">
-                <ul>
+              <ul>
                 <p><li>Move-in date can be rescheduled to any day as long as it is after license start date.</li>
 <li>If the tenant decides to move-in before license start date then the license start date will be preponed to the move-in date.The rent shall be calculated according to the License start date clause.</li>
 <li>If the move-in date is postponed the rent will start as per the Security Deposit and license start date clause. However, the utility charges and other charges will be charged from actual move in date.</li>
 <li>Token and Security deposit need to be paid 2 days before license start date.
 Cash payments will be accepted for the security deposit or advance rent up to 48 hours before the time of move-in.</li>
 <li>To move-in on a particular date, it is mandatory to schedule a move-in 2 days before the move-in date.</li>
-</p>
-</ul>
+               </p>
+             </ul>
                   <!-- List Group End Here -->
                 </div>
               </div>
-            </div>         <!-- fouth Panel End Here -->
+            </div><!-- fouth Panel End Here -->
 
 
             <!-- Fifth Panel start Here -->
@@ -193,64 +181,51 @@ Cash payments will be accepted for the security deposit or advance rent up to 48
                   </a>
                 </h4>
               </div>
-              <div id="collapsefive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfive" aria-expanded="true" style="background-color: rgb(243,210,230);">
-                <div class="panel-body">
-                <ul>
+           <div id="collapsefive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfive" aria-expanded="true" style="background-color: rgb(243,210,230);">
+             <div class="panel-body">
+              <ul>
                <p><li>DivaStays houses are located in various cities across India in reputed society and safe locations. </li> <li>In order to maintain a peaceful environment of the society, nuisance or misconduct of any kind including but not limited to playing loud music beyond the permitted time limit, drinking/smoking in society corridors/ premises and consumption of illegal and banned substances are not allowed in DivaStays houses.</li>
 <li>Visitors of the opposite sex are not allowed after 8:00 PM, unless approved by roommates and society office (wherever applicable).</li>
 <li>Internal issues/ fights among the tenants are better resolved among roomies. Involvement of DivaStays is not beneficial and hence undesirable.</li>
-</p>
-</ul>
+              </p>
+             </ul>
                   <!-- List Group End Here -->
                 </div>
               </div>
             </div>
             <!-- Fifth Panel End Here -->
             
-            
-            
-            
-              <!-- sixth Panel start Here -->
-
-            
-            
+             <!-- sixth Panel start Here -->
             <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingfive">
+              <div class="panel-heading" role="tab" id="headingsix">
                 <h4 class="panel-title">
-                  <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
+                  <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsesix" aria-expanded="true" aria-controls="collapsesix">
                     Offers <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
                   </a>
                 </h4>
               </div>
-              <div id="collapsefive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfive" aria-expanded="true" style="background-color: rgb(243,210,230);">
-                <div class="panel-body">
-                <ul>
-                 <p><li>The offer is only applicable for bookings on last bed.</li>
-
+           <div id="collapsesix" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingsix" aria-expanded="true" style="background-color: rgb(243,210,230);">
+             <div class="panel-body">
+               <ul>
+                <p><li>The offer is only applicable for bookings on last bed.</li>
 <li>The tenant must complete 1 month stay with DivaStays post move-in, in order to claim the credits.</li>
-
 <li>Credits received may vary based on the ongoing promotion.</li>
-
 <li>A maximum credit of INR 2000 is applicable for ongoing offer on last beds.</li>
-
 <li>Offers can be applied only once per booking.</li>
-
 <li>Credits cannot be redeemed for cash under any circumstances.</li>
-
-</p>
-</ul>
+               </p>
+              </ul>
                   <!-- List Group End Here -->
                 </div>
               </div>
             </div>
-             <!-- Fifth Panel End Here -->
+             <!-- Sixth Panel End Here -->
             
-
-          </div>
-        </div><!-- /.sidebar column end here -->
-        
-      
-    <jsp:include page="footer.jsp"></jsp:include>
+     </div>
+    </div><!-- /.sidebar column end here -->
+  </div>
+</div>
+       <jsp:include page="footer.jsp"></jsp:include>
 	
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>

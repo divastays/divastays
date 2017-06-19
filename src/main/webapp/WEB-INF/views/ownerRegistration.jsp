@@ -33,8 +33,7 @@
                     <input type="text" name="aadharNumber" id="aadharNumber" placeholder="Aadhar Number" onBlur="checkAadharNumber();CheckAadhar(); return false;" autocomplete="off" required>
              </label> 
             </div>
-
-          <div class="form-row" style="float:left; width:50%;">
+        <div class="form-row" style="float:left; width:50%;">
                 <label>
                     <span>Last name</span>
                     <input type="text" name="lastName" id="lastName" placeholder="Last Name" onBlur="CheckLastName(); return false;" autocomplete="off" required>
@@ -49,14 +48,12 @@
                 </label>
               </div>
 
-            <div class="form-row" style="width:50%;">
+         <div class="form-row" style="width:50%;">
                 <button type="submit" value="Submit">Submit</button>
-            </div>
-
-        </form>
-    </div>
-      <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    
+         </div>
+      </form>
+   </div>
+      
      <script type="text/javascript">
     function checEmail()
     {
@@ -98,9 +95,7 @@
     			
     		});
     }
-    
     </script>
-    
     <script>
     function checkAadharNumber()
     {
@@ -123,8 +118,7 @@
     }
     
     </script>
-    
-    
     <script src="js/registrationForm.js" type="text/javascript"></script>  
+    <script src="js/jquery-1.11.2.min.js"></script>
 </body>
 </html>

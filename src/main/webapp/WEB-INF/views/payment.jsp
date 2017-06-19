@@ -32,34 +32,32 @@
     padding: 5px;
  
 }
-
- </style>
-
+</style>
 </head>
 <body>
-
 <div class="container">    
-    <div class="row">
-     <div class="bs-example" align="center">
+  <div class="row">
+  
+    <div class="bs-example" align="center">
       <h4><font color="#FF0000">Payment Details</font></h4>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#creditCard">Credit Card</a></li>
-        <li><a data-toggle="tab" href="#debitCard">Debit Card</a></li>
-        <li><a data-toggle="tab" href="#netBanking">Net Banking</a></li>
-        <li><a data-toggle="tab" href="#wallets">Wallets</a></li>
-       
-    </ul>    
-</div>
+        <ul class="nav nav-tabs">
+         <li class="active"><a data-toggle="tab" href="#creditCard">Credit Card</a></li>
+         <li><a data-toggle="tab" href="#debitCard">Debit Card</a></li>
+         <li><a data-toggle="tab" href="#netBanking">Net Banking</a></li>
+         <li><a data-toggle="tab" href="#wallets">Wallets</a></li>
+        </ul>    
+    </div>
 
-
-  <div class="tab-content">
+   <div class="tab-content">
+   
    <!--credit card code start-->
      <div id="creditCard" class="tab-pane fade in active" >
-         <div class="container">
+       <div class="container">
          <div class="row">
            <div class="col-xs-12 col-md-5">
             <!-- CREDIT CARD FORM STARTS HERE -->
             <div class="panel panel-default credit-card-box" style="background-color: rgb(243,210,230);">
+            
                 <div class="panel-heading display-table" >
                     <div class="row display-tr" >
                         <h3 class="panel-title display-td" >Payment Details</h3>
@@ -70,6 +68,7 @@
                 </div>
                <div class="panel-body">
                <form class="form-basic" role="form" id="creditCardForm" method="POST" action="save" name="creditCardForm" onSubmit="return CreditSubmit();" >
+               
                  <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group">
@@ -110,11 +109,10 @@
                     <option value="10">October</option>
                     <option value="11">November</option>
                     <option value="12">December</option>
-                </select > 
+                </select> 
               
                 <select required>
                     <option value="">Year</option>
-                  
                     <option value="17"> 2017</option>
                     <option value="18"> 2018</option>
                     <option value="19"> 2019</option>
@@ -157,47 +155,47 @@
     <!--credit card code end-->
     
      <!--debit card code start-->
-      <div id="debitCard" class="tab-pane">
-         <div class="container">
-             <div class="row">
-               <div class="col-xs-12 col-md-5">
+    <div id="debitCard" class="tab-pane">
+      <div class="container">
+       <div class="row">
+         <div class="col-xs-12 col-md-5">
             <!-- DEBIT CARD FORM STARTS HERE -->
-            <div class="panel panel-default credit-card-box" style="background-color: rgb(243,210,230);">
-                <div class="panel-heading display-table" >
-                    <div class="row display-tr" >
-                        <h3 class="panel-title display-td" >Payment Details</h3>
-                        <div class="display-td" >                            
-                            <img class="img-responsive pull-right" src="images/payment_logoImg.png">
-                        </div>
-                    </div>                    
-                </div>
-                
-                <div class="panel-body">
-                    <form class="form-basic" role="form" id="debitCardForm" method="POST" action="save" name="debitCardForm" onSubmit="return DebitSubmit();">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                             <label for="name">NAME ON CARD</label>
-                                <input type="text" class="form-control" name="debitName" id="debitName" onBlur="CheckDebitName(); return false;" required autofocus />
-                               </div>
-                            </div>                        
+           <div class="panel panel-default credit-card-box" style="background-color: rgb(243,210,230);">
+              <div class="panel-heading display-table" >
+                 <div class="row display-tr" >
+                    <h3 class="panel-title display-td" >Payment Details</h3>
+                      <div class="display-td" >                            
+                          <img class="img-responsive pull-right" src="images/payment_logoImg.png">
                       </div>
+                 </div>                    
+              </div>
+                
+          <div class="panel-body">
+            <form class="form-basic" role="form" id="debitCardForm" method="POST" action="save" name="debitCardForm" onSubmit="return DebitSubmit();">
+              <div class="row">
+                <div class="col-xs-12">
+                   <div class="form-group">
+                      <label for="name">NAME ON CARD</label>
+                          <input type="text" class="form-control" name="debitName" id="debitName" onBlur="CheckDebitName(); return false;" required autofocus />
+                   </div>
+                </div>                        
+              </div>
                     
-                <div class="row">
-                   <div class="col-xs-12">
-                       <div class="form-group">
-                          <label for="debitcardNumber">CARD NUMBER</label>
-                             <div class="input-group">
-                                <input  type="tel" class="form-control" name="debitcardNumber" id="debitcardNumber" placeholder="Valid Card Number" onBlur="debitCard(document.debitCardForm.debitcardNumber)" required />
-                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-                                    </div>
-                                </div>                            
-                            </div>
-                        </div>
-                 <div class="row">
-                     <div class="col-xs-8 col-md-8">
-                        <div class="form-group">
-                           <label>Expiration</label>
+             <div class="row">
+               <div class="col-xs-12">
+                  <div class="form-group">
+                     <label for="debitcardNumber">CARD NUMBER</label>
+                       <div class="input-group">
+                         <input  type="tel" class="form-control" name="debitcardNumber" id="debitcardNumber" placeholder="Valid Card Number" onBlur="debitCard(document.debitCardForm.debitcardNumber)" required />
+                            <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                      </div>
+                  </div>                            
+               </div>
+             </div>
+             <div class="row">
+                <div class="col-xs-8 col-md-8">
+                   <div class="form-group">
+                     <label>Expiration</label>
                      <br>
                 <select required >
                     <option value="">Month</option>
@@ -240,13 +238,13 @@
                       <input type="text" class="form-control" name="debitcardCVC" id="debitcardCVC" placeholder="CVC"  onBlur="CheckDebitCVV(); return false;" required />
                  </div>
               </div>
-           </div>
+             </div>
                 <div class="row">
                     <div class="col-xs-12">
                         <button type="submit" value="Submit">Submit</button>
                      </div>
                 </div>
-                 </form>
+              </form>
                 </div>
             </div>            
             <!-- DEBIT CARD FORM ENDS HERE --> 
@@ -257,35 +255,35 @@
       <!--debit card code end-->
         
          <!--net banking code start-->
-         <div id="netBanking" class="tab-pane">
-              <div class="container">
-                 <div class="row">
-                    <div class="col-xs-12 col-md-5">
+        <div id="netBanking" class="tab-pane">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-md-5">
             <!-- NET BANKING STARTS HERE -->
             <div class="panel panel-default credit-card-box" style="background-color: rgb(243,210,230);">
-                <div class="panel-heading display-table" >
-                    <div class="row display-tr" >
-                        <h3 class="panel-title display-td" >Payment Details</h3>
-                        <div class="display-td" >                            
+              <div class="panel-heading display-table" >
+                <div class="row display-tr" >
+                   <h3 class="panel-title display-td" >Payment Details</h3>
+                     <div class="display-td" >                            
                             <img class="img-responsive pull-right" src="images/payment_logoImg.png">
-                        </div>
-                    </div>                    
-                </div>
-                <div class="panel-body">
-                 <form class="form-basic" role="form"  method="POST" action="save" name="netBanking" onSubmit="return NetBanking();">
-               <h4 align="center">Net Banking</h4>
-           <div class="form-row" style="float:left; width:50%;">  
-             <label>
-               <input type="radio"  name="sameName" id="andhraBank"  value="andhraBank" ><label>Andhra Bank</label><br>
-               <input type="radio"  name="sameName" id="allahabadBank" value="allahabadBank"><label>Allahabad Bank</label><br>
-               <input type="radio"  name="sameName" id="bankofBaroda" value="bankofBaroda"><label>Bank of Baroda</label><br>
-               <input type="radio"  name="sameName" id="canaraBank" value="canaraBank"><label>Canara Bank</label><br>
-               <input type="radio"  name="sameName" id="idbiBank" value="idbiBank"><label>IDBI Bank</label><br>
-               <input type="radio"  name="sameName" id="iciciBank" value="iciciBank"><label>Icici Bank</label><br>
-               <input type="radio"  name="sameName" id="indianOverseasBank" value="indianOverseasBank"><label>Indian Overseas Bank</label><br>
-               <input type="radio"  name="sameName" id="punjabNationalBank" value="punjabNationalBank"><label>Punjab National Bank</label><br>
-               <input type="radio"  name="sameName" id="southIndianBank" value="southIndianBank"><label>South Indian Bank</label><br>
-                <input type="radio"  name="sameName" id="sbi"  value="sbi"><label>State Bank Of India</label><br>
+                     </div>
+                </div>                    
+               </div>
+         <div class="panel-body">
+           <form class="form-basic" role="form"  method="POST" action="save" name="netBanking" onSubmit="return NetBanking();">
+             <h4 align="center">Net Banking</h4>
+               <div class="form-row" style="float:left; width:50%;">  
+                <label>
+                  <input type="radio"  name="sameName" id="andhraBank"  value="andhraBank" ><label>Andhra Bank</label><br>
+                  <input type="radio"  name="sameName" id="allahabadBank" value="allahabadBank"><label>Allahabad Bank</label><br>
+                  <input type="radio"  name="sameName" id="bankofBaroda" value="bankofBaroda"><label>Bank of Baroda</label><br>
+                  <input type="radio"  name="sameName" id="canaraBank" value="canaraBank"><label>Canara Bank</label><br>
+                  <input type="radio"  name="sameName" id="idbiBank" value="idbiBank"><label>IDBI Bank</label><br>
+                  <input type="radio"  name="sameName" id="iciciBank" value="iciciBank"><label>Icici Bank</label><br>
+                  <input type="radio"  name="sameName" id="indianOverseasBank" value="indianOverseasBank"><label>Indian Overseas Bank</label><br>
+                  <input type="radio"  name="sameName" id="punjabNationalBank" value="punjabNationalBank"><label>Punjab National Bank</label><br>
+                  <input type="radio"  name="sameName" id="southIndianBank" value="southIndianBank"><label>South Indian Bank</label><br>
+                  <input type="radio"  name="sameName" id="sbi"  value="sbi"><label>State Bank Of India</label><br>
               </label>  
             </div>
             
@@ -302,7 +300,7 @@
                <input type="radio" name="sameName" id="fedralBank" value="fedralBank"><label>Federal Bank</label><br>
                <input type="radio" name="sameName" id="ingVysya" value="ingVysya"><label>ING Vysya Bank</label><br>
               </label>  
-             </div>
+            </div>
             <div class="row">
                <div class="col-xs-5">
                    <button type="submit" value="Submit">Submit</button>
@@ -318,7 +316,7 @@
 </div> 
    <!--net banking code end-->
           
-             <!--wallet code start-->  
+   <!--wallet code start-->  
         <div id="wallets" class="tab-pane">
            <div class="container">
               <div class="row">

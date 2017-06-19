@@ -7,6 +7,6 @@
 </head>
 <body>
 <jsp:forward page="showHome"></jsp:forward>
-hiii hello
+
 </body>
 </html>

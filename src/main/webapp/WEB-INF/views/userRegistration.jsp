@@ -34,17 +34,17 @@
                     <select name="motherTounge" id="motherTounge" class="form-control selectpicker" required>
                           <option value="">Select Your Mother Tounge</option>
                         <option value="hindi">Hindi</option>
-                        <option value="marathi">à¤®à¤°à¤¾à¤ à¥€</option>
+                        <option value="marathi">मराठी</option>
                         <option value="english">English</option>
-                        <option value="bengali">à¦¬à¦¾à¦‚à¦²à¦¾</option>
-                         <option value="telugu">à°¤à±†à°²à±à°—à±</option>
-                          <option value="tamil">Tamiá¸»</option>
-                         <option value="urdu">Ø§ÙØ±Ø¯ÙÙˆ</option>
-                          <option value="kannada">à²•à²¨à³à²¨à²¡</option>
-                           <option value="gujrati">àª—à«àªœàª°àª¾àª¤à«€</option>
-                            <option value="oriya">à¬“à¬¡à¬¼à¬¿à¬† oá¸iÄ</option>
-                             <option value="malyalam">à´®à´²à´¯à´¾à´³à´‚</option>
-                              <option value="sanskrit">saá¹ƒská¹›tam</option>
+                        <option value="bengali">বাংলা</option>
+                         <option value="telugu">తెలుగు</option>
+                          <option value="tamil">தமிழ்</option>
+                         <option value="urdu">اُردُو</option>
+                          <option value="kannada">ಕನ್ನಡ</option>
+                           <option value="gujrati">ગુજરાતી</option>
+                            <option value="oriya">ଓଡ଼ିଆ</option>
+                             <option value="malyalam">മലയാളം</option>
+                              <option value="sanskrit">संस्कृतम्</option>
                         
                      </select>
                 </label>

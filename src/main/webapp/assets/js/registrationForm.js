@@ -161,7 +161,7 @@ floor1.style.backgroundColor = badColor;
 }  
 
 
-//validate Room
+//validate No of Room
 function CheckRoom()   
 {  
   var room = document.getElementById('room');
@@ -404,85 +404,6 @@ gender.style.backgroundColor = badColor;
 
 
 
-//validate food
-function CheckFoodAvailability()   
-{  
-  var food = document.getElementById('checkButton');
-  var decimal= /.*\S.*/;
-  var goodColor = "#82E0AA";
-  var badColor = "#E74C3C";
-if(food.value.match(decimal))   
-{   
-food.style.backgroundColor = goodColor;
-}  
-else  
-{   
-food.style.backgroundColor = badColor;
-}  
-}
-
-//validate roomID
-function CheckRoomID()   
-{  
-  var roomID = document.getElementById('roomID');
-  var decimal = /^[0-9]{0,3}$/;
-  var goodColor = "#82E0AA";
-  var badColor = "#E74C3C";
-if(roomID.value.match(decimal))   
-{   
- roomID.style.backgroundColor = goodColor;
-}  
-else  
-{   
-roomID.style.backgroundColor = badColor;
-}  
-}  
-
-
-//validate Bed
-function CheckBed()   
-{  
-  var bed = document.getElementById('bed');
-  var decimal = /^[0-9]{1,2}$/;
-  var goodColor = "#82E0AA";
-  var badColor = "#E74C3C";
-if(bed .value.match(decimal))   
-{   
- bed.style.backgroundColor = goodColor;
-}  
-else  
-{   
- bed.style.backgroundColor = badColor;
-}  
-}  
-
-
-//Validate Submit
-function RoomSubmit()
-{
-	
-	var roomID = document.getElementById('roomID').value;
-	var decimalRoomID = /^[0-9]{0,3}$/;
-	var bed = document.getElementById('bed').value;
-	var decimalBed = /^[0-9]{1,2}$/;
-	
-	
-    if (roomID != '' && bed != '')
-	{
-		if (roomID.match(decimalRoomID) && bed.match(decimalBed))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-}
-}
-
-
-
-
 
 
 
@@ -543,10 +464,17 @@ function HouseSubmit()
 	  var houseName = document.getElementById('houseName').value;
       var decimalHouseName = /.*\S.*/;
 	 
+    //images size validation
+      var imgSize1= document.getElementById("img1");
+ 	  var imgSize2= document.getElementById("img2");
+ 	  var imgSize3= document.getElementById("img3");
+ 	  var fileSize1 =imgSize1.files[0].size;
+ 	  var fileSize2 =imgSize2.files[0].size;
+ 	  var fileSize3 =imgSize3.files[0].size;	
 	 
 	 if (aadhar1 != '' && Floor != '' && Room != '' && Rent != '' && Deposit != '' && Area != '' && Address != '' && img1 != '' && img2 != '' && img3 != '' && houseName != '' )
 	{
-		if (aadhar1.match(decimalaadhar1) && Floor.match(decimalFloor) && Room.match(decimalRoom) && Rent.match(decimalRent) && Deposit.match(decimalDeposit) && Area.match(decimalArea) && Address.match(decimalAddress) && img1.match(decimalImage) && img2.match(decimalImage) && img3.match(decimalImage) && houseName.match(decimalHouseName) )
+		if (aadhar1.match(decimalaadhar1) && Floor.match(decimalFloor) && Room.match(decimalRoom) && Rent.match(decimalRent) && Deposit.match(decimalDeposit) && Area.match(decimalArea) && Address.match(decimalAddress) && img1.match(decimalImage) && img2.match(decimalImage) && img3.match(decimalImage) && houseName.match(decimalHouseName) && fileSize1 <= 1048576 && fileSize2 <= 1048576 && fileSize3 <= 1048576 )
 		{
 			return true;
 		}
@@ -593,6 +521,8 @@ function UserSubmit()
 }
 }
 
+
+//House Form
 function CheckHouseName()
 {
   var houseName = document.getElementById('houseName');
@@ -609,14 +539,16 @@ else
 }  
 }
 
-
+//House Form
 function CheckImg1()   
 {  
   var img1 = document.getElementById('img1');
   var decimal = /([a-zA-Z0-9\s_\\.\-:])+(.png|.jpeg|.jpg|.gif)$/;
+  //var imgSize1 = document.getElementById("img1");
+  var fileSize1 =img1.files[0].size;
   var goodColor = "#82E0AA";
   var badColor = "#E74C3C";
-if(img1 .value.match(decimal))   
+if(img1 .value.match(decimal) && fileSize1 < 1048576)   
 {   
  img1.style.backgroundColor = goodColor;
 }  
@@ -626,14 +558,15 @@ else
 }  
 }  
 
-
+//House Form
 function CheckImg2()   
 {  
   var img2 = document.getElementById('img2');
   var decimal = /([a-zA-Z0-9\s_\\.\-:])+(.png|.jpeg|.jpg|.gif)$/;
+   var fileSize2 =img2.files[0].size;
   var goodColor = "#82E0AA";
   var badColor = "#E74C3C";
-if(img2 .value.match(decimal))   
+if(img2 .value.match(decimal) && fileSize2 < 1048576)   
 {   
  img2.style.backgroundColor = goodColor;
 }  
@@ -643,13 +576,15 @@ else
 }  
 }  
 
+//House Form
 function CheckImg3()   
 {  
   var img3 = document.getElementById('img3');
   var decimal = /([a-zA-Z0-9\s_\\.\-:])+(.png|.jpeg|.jpg|.gif)$/;
+    var fileSize3 =img3.files[0].size;
   var goodColor = "#82E0AA";
   var badColor = "#E74C3C";
-if(img3 .value.match(decimal))   
+if(img3 .value.match(decimal) && fileSize3 < 1048576)   
 {   
  img3.style.backgroundColor = goodColor;
 }  

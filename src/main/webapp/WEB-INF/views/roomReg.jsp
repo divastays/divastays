@@ -45,7 +45,7 @@
                       <label><span>Facilities</span></label>
                   </tr>
                   </thead>
-                  <tbody>
+                  <tbody style="background-color: rgb(243,210,230);">
                  <tr>
     	            <td>AC</td>
                     <td><input type="radio" name="ac"  ><span>Yes&nbsp;&nbsp;&nbsp;</span></td>

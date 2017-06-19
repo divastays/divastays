@@ -126,7 +126,7 @@ else
 
 
 //Validate Submit
-function Submit()
+function RoomSubmit()
 {
 	
 	var roomId = document.getElementById('roomId').value;

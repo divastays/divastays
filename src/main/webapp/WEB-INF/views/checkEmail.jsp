@@ -5,7 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<script type="text/javascript" src="js/jquery.js"></script>
+
+
+</head>
+<body>
+<form method="POST" action="insertdata.php" onsubmit="return checkall();">
+ <input type="text" name="username" id="UserName" onkeyup="checkname();">
+ <span id="name_status"></span>
+ <br>
+ <input type="text" name="useremail" id="UserEmail" onkeyup="checkemail();">
+ <span id="email_status"></span>
+ <br>
+ <input type="password" name="userpass" id="UserPassword">
+ <br>
+ <input type="submit" name="submit_form" value="Submit">
+</form>
+
+
 <script type="text/javascript">
 
 function checkname()
@@ -88,19 +104,6 @@ function checkall()
 }
 
 </script>
-</head>
-<body>
-<form method="POST" action="insertdata.php" onsubmit="return checkall();">
- <input type="text" name="username" id="UserName" onkeyup="checkname();">
- <span id="name_status"></span>
- <br>
- <input type="text" name="useremail" id="UserEmail" onkeyup="checkemail();">
- <span id="email_status"></span>
- <br>
- <input type="password" name="userpass" id="UserPassword">
- <br>
- <input type="submit" name="submit_form" value="Submit">
-</form>
-
+<script type="text/javascript" src="js/jquery.js"></script>
 </body>
 </html>

@@ -39,16 +39,8 @@
                         </div>
                     </form>
                 </div>
-                
-               
-                
-                
-                
-              
-               <div class="col-xs-12 col-sm-3 column">
-                
-                   
-						   <h4>Follow Us</h4>
+                <div class="col-xs-12 col-sm-3 column">
+                        <h4>Follow Us</h4>
 							<ul class="social-icon">
 								<li class="bglight-blue"><i class="fa fa-facebook"></i></li>
 								<li class="bgred"><i class="fa fa-google-plus"></i></li>

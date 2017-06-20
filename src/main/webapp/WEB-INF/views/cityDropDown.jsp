@@ -5,37 +5,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
  <link href="css/cityDropDown.css" rel="stylesheet"/>
  <link href="css/component.css" rel="stylesheet"/>
- 
-<title>City DropDown</title>
+ <title>City DropDown</title>
 </head>
 <body>
-<!-- dropdown start-->
-
 <nav id="cbp-hrmenu" class="cbp-hrmenu">
 					<ul>
 						<li>
 							<a href="#">Pune</a>
 							<div class="cbp-hrsub" style="height:345px;">
 								<div class="cbp-hrsub-inner"> 
-                                
-									<div>
+                                   <div>
 										<h3>DivaStays Near Airport</h3>
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays2</a></li>
 											<li><a href="#">DivaStays3</a></li>
-									
-										</ul>
+									    </ul>
 									</div>
-                                    
-									<div>
+                                    <div>
 										<h3>DivaStays Near Railway Station</h3>
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays2</a></li>
 											<li><a href="#">DivaStays3</a></li>
-											
-										</ul>
+									    </ul>
 									</div>
 									<div>
 										<h3>DivaStays Near Colleges</h3>
@@ -48,11 +41,9 @@
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays2</a></li>
-                                          
-										</ul>
+                                       </ul>
 									</div>
-                                    
-								</div><!-- /cbp-hrsub-inner -->
+                                </div><!-- /cbp-hrsub-inner -->
 							</div>
 						  <!-- /cbp-hrsub -->
 						</li>
@@ -73,28 +64,22 @@
 											<li><a href="#">DivaStays2</a></li>
 										</ul>
 									</div>
-                                    
-									<div>
+                                    <div>
 										<h3>DivaStays Near Colleges</h3>
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-									
-										</ul>
+									    </ul>
 									</div>
-                                    
-									<div>
+                                    <div>
 										<h3>DivaStays Near IT Compnies</h3>
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-											
-											
 										</ul>
 									</div>
-                                    
-								</div><!-- /cbp-hrsub-inner -->
+                                 </div><!-- /cbp-hrsub-inner -->
 							</div>
 						  <!-- /cbp-hrsub -->
 						</li>
@@ -115,32 +100,25 @@
 											<li><a href="#">DivaStays2</a></li>
 										</ul>
 									</div>
-                                    
-									<div>
+                                    <div>
 										<h3>DivaStays Near Colleges</h3>
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-											
 										</ul>
 									</div>
-                                    
-									<div>
+                                    <div>
 										<h3>DivaStays Near IT Compnies</h3>
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-										
-											
 										</ul>
 									</div>
-                                    
-								</div><!-- /cbp-hrsub-inner -->
+                                   </div><!-- /cbp-hrsub-inner -->
 							</div>
 						  <!-- /cbp-hrsub -->
 						</li>
-						
 						<li>
 							<a href="#">Kolkata</a>
 							<div class="cbp-hrsub" style="height:345px;">
@@ -164,7 +142,6 @@
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-										
 										</ul>
 									</div>
 									<div>
@@ -172,9 +149,7 @@
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-									
-										
-										</ul>
+									   </ul>
 									</div>
 								</div><!-- /cbp-hrsub-inner -->
 							</div>
@@ -204,7 +179,6 @@
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-										
 										</ul>
 									</div>
 									<div>
@@ -212,16 +186,13 @@
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-										
-										
 										</ul>
 									</div>
 								</div><!-- /cbp-hrsub-inner -->
 							</div>
 				    <!-- /cbp-hrsub -->
 						</li>
-						
-                        <li>
+						<li>
 							<a href="#">Delhi</a>
 							<div class="cbp-hrsub" style="height:345px;">
 								<div class="cbp-hrsub-inner">
@@ -244,7 +215,6 @@
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-										
 										</ul>
 									</div>
 									<div>
@@ -252,18 +222,13 @@
 										<ul>
 											<li><a href="#">DivaStays1</a></li>
 											<li><a href="#">DivaStays1</a></li>
-										
-											
 										</ul>
 									</div>
 								</div><!-- /cbp-hrsub-inner -->
 							</div>
 						  <!-- /cbp-hrsub -->
 						</li>
-						
 					</ul>
 				</nav>
-               
-
-</body>
+ </body>
 </html>

@@ -3,23 +3,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>pg_short_term</title>
+<title>divaStays_short_term</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/default.css" rel="stylesheet">
-        <link href="css/component.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet"/>
-    <link href="css/header.css" rel="stylesheet"/>
-  <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link href="css/header.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <!-- for google api-->
 <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 <!-- Inline CSS based on choices in "Settings" tab -->
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 <style>
@@ -29,7 +24,6 @@
 </style>
 
 <style>
-
 #first{ height:500px;}
 </style>
 
@@ -110,9 +104,6 @@
 }
 
 <!-- start search box-->
-
-
-
 .search {
     margin-top: -25%;
 }
@@ -124,43 +115,10 @@
 }
 <!-- end search box-->
   </style>
-   <script>
-$(window).ready(function(){
-      var nowTemp = new Date();
-      var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-      var checkin = $('#checkin').datepicker({
-        onRender: function(date) {
-          return date.valueOf() < now.valueOf() ? 'disabled' : '';
-        }
-      }).on('changeDate', function(ev) {
-        if (ev.date.valueOf() > checkout.date.valueOf()) {
-          var newDate = new Date(ev.date)
-          newDate.setDate(newDate.getDate() + 1);
-          checkout.setValue(newDate);
-        }
-        checkin.hide();
-        $('#checkout')[0].focus();
-      }).data('datepicker');
-      var checkout = $('#checkout').datepicker({
-        onRender: function(date) {
-          return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-        }
-      }).on('changeDate', function(ev) {
-        checkout.hide();
-      }).data('datepicker');
-    });
-
-</script>
-
  
- 
- 
-
 </head>
 <body >
-
-	
-    <nav class="navbar navbar-default navbar-inverse" role="navigation" style="background-color: rgb(243,210,230);">
+<nav class="navbar navbar-default navbar-inverse" role="navigation" style="background-color: rgb(243,210,230);">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -299,20 +257,7 @@ $(window).ready(function(){
                     </div>
 					</div>
                 
-  					<!--
-                          <div class="row" align="left">
-						 <div class="container" align="left">
-                        <ul class="nav nav-pills" role="tablist">
-          		          
-        		 
-          		 <a class="col-lg-1" href="#"><h6 style="color:#00FFFF" align="left">EXPERIANCES</h6></a>
-                 <a class="col-lg-1" href="#"><h6 style="color:#00FFFF" align="left">PLACES</h6></a>
-                  <a class="col-lg-1" href="#"><h6 style="color:#00FFFF" align="left">FOR YOU</h6></a> 
-        		  <a class="col-lg-1" href="#"><h6 style="color:#00FFFF" align="left">HOMES</h6></a>
-            		</ul>
-      			  
-                 </div> <!- this tag is for the border line->
-        			</div>-->
+  					
   
   <!-- search box start -->
  				
@@ -339,9 +284,9 @@ $(window).ready(function(){
 <br>
   
   </div>
-</div>
+</div> 
   
-  <!-- search box end -->
+ <!-- search box end -->
 <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -551,10 +496,13 @@ $(window).ready(function(){
 <!-- Include jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
+
+
 <!-- Include Date Range Picker -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
+<!--  Check in,check-out calender-->
 <script>
 var nowTemp = new Date();
 var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
@@ -580,24 +528,17 @@ var checkout = $('#dpd2').datepicker({
   checkout.hide();
 }).data('datepicker');
 </script>
-<script src="js/jquery.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
- <script src="js/cbpHorizontalMenu.js" type="text/javascript"></script>
- <script src="js/modernizr.custom.js" type="text/javascript"></script>
-  <script src="js/jquery.easing.min.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/scripts.js"></script>
+<script src="js/cbpHorizontalMenu.js" type="text/javascript"></script>
 		<script>
 			$(function() {
 				cbpHorizontalMenu.init();
 			});
 		</script>
+		
+		
 <!---get in touch validation-->
 <script src="js/userFormVerify.js"></script>
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script>
 		$(function() {
@@ -616,5 +557,6 @@ var checkout = $('#dpd2').datepicker({
 			});
 		});
 	</script>
+	  
 </body>
 </html>

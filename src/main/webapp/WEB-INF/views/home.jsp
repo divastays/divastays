@@ -7,21 +7,11 @@
  <title>home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">  
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/default.css" rel="stylesheet">
-  <link href="css/component.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet"/>
   <link href="css/header.css" rel="stylesheet"/>
 
-  <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
-  <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
-
-<!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
-<!-- for google api-->
-<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 
 <!-- Inline CSS based on choices in "Settings" tab -->
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
@@ -123,44 +113,7 @@
 }
 <!-- end search box-->
   </style>
-  <script>
-$(window).ready(function(){
-      var nowTemp = new Date();
-      var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-      var checkin = $('#checkin').datepicker({
-        onRender: function(date) {
-          return date.valueOf() < now.valueOf() ? 'disabled' : '';
-        }
-      }).on('changeDate', function(ev) {
-        if (ev.date.valueOf() > checkout.date.valueOf()) {
-          var newDate = new Date(ev.date)
-          newDate.setDate(newDate.getDate() + 1);
-          checkout.setValue(newDate);
-        }
-        checkin.hide();
-        $('#checkout')[0].focus();
-      }).data('datepicker');
-      var checkout = $('#checkout').datepicker({
-        onRender: function(date) {
-          return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-        }
-      }).on('changeDate', function(ev) {
-        checkout.hide();
-      }).data('datepicker');
-    });
-
-
-</script>
-<script>
-            var autocomplete;
-            function initialize() {
-              autocomplete = new google.maps.places.Autocomplete(
-                  /** @type {HTMLInputElement} */(document.getElementById('autocomplete')),
-                  { types: ['geocode'] });
-              google.maps.event.addListener(autocomplete, 'place_changed', function() {
-              });
-            }
-        </script>
+ 
 </head>
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -316,7 +269,7 @@ $(window).ready(function(){
         
    	  </div>
   </div>
-</div>
+
 </sec>
 
 <section id="three" class="no-padding">
@@ -616,19 +569,7 @@ $(window).ready(function(){
       </div>
       </div>
    
-   
-			
-
-
-
-
-
-
-
-
-
-
-
+  
 		<div class="jumbotron">
 		<div class="container">
 			<div class=" row">
@@ -695,40 +636,17 @@ $(window).ready(function(){
 <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
 <!-- Include jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<!-- Include Date Range Picker -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-
-<script>
-	$(document).ready(function(){
-		var date_input=$('input[name="date"]'); //our date input has the name "date"
-		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-		date_input.datepicker({
-			format: 'mm/dd/yyyy',
-			container: container,
-			todayHighlight: true,
-			autoclose: true,
-		})
-	})
-</script>
-
-<script src="js/jquery.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
- <script src="js/cbpHorizontalMenu.js" type="text/javascript"></script>
- <script src="js/modernizr.custom.js" type="text/javascript"></script>
-  <script src="js/jquery.easing.min.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/scripts.js"></script>
+<script src="js/cbpHorizontalMenu.js" type="text/javascript"></script>
 		<script>
 			$(function() {
 				cbpHorizontalMenu.init();
 			});
 		</script>
+		
+		
 <!----get in touch validation--->
 <script src="js/userFormVerify.js"></script>
-
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script>
 function checkLogin()
@@ -756,6 +674,5 @@ function checkLogin()
 		});
 }
 </script>
-
 </body>
 </html>

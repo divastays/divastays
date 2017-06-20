@@ -11,19 +11,12 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/default.css" rel="stylesheet">
   <link href="css/header.css" rel="stylesheet">
-        <link href="css/component.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet"/>
-  <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
-<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<!--Font Awesome (added because you use icons in your prepend/append)-->
-<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
-<!-- for google api-->
-<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <!-- for google api-->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
 <!-- Inline CSS based on choices in "Settings" tab -->
 <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
-
 
 <style>
 	.ui-autocomplete { font-size: 10px; }
@@ -34,9 +27,7 @@
 
 #first{ height:500px;}
 </style>
-
-
-  <style>
+<style>
 	.button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -267,20 +258,7 @@
                     </div>
                     
                     
-                    <!-- 
-                     <div class="row" align="left">
-					<div class="container" align="left">
-                        <ul class="nav nav-pills" role="tablist">
-          		          
-        		 
-          		 <a class="col-lg-1" href="#"><h6 style="color:#00FFFF" align="left">EXPERIANCES</h6></a>
-                 <a class="col-lg-1" href="#"><h6 style="color:#00FFFF" align="left">PLACES</h6></a>
-                  <a class="col-lg-1" href="#"><h6 style="color:#00FFFF" align="left">FOR YOU</h6></a> 
-        		  <a class="col-lg-1" href="#"><h6 style="color:#00FFFF" align="left">HOMES</h6></a>
-            		</ul>
-      			  
-                 </div> <!- this tag is for the border line->
-        			</div>-->
+                 
     
                     <!-- two more tag add for  puppose is to contain in one-->
                  
@@ -550,21 +528,8 @@
     
   <jsp:include page="footer.jsp"></jsp:include>
     
-
-
-
-
-
-
-
-
-<!-- Extra JavaScript/CSS added manually in "Settings" tab -->
 <!-- Include jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<!-- Include Date Range Picker -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
 <script>
 	$(document).ready(function(){
@@ -579,22 +544,18 @@
 	})
 </script>
 
-<script src="js/jquery.js" type="text/javascript"></script>
+
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
- <script src="js/cbpHorizontalMenu.js" type="text/javascript"></script>
- <script src="js/modernizr.custom.js" type="text/javascript"></script>
-  <script src="js/jquery.easing.min.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/scripts.js"></script>
+<script src="js/cbpHorizontalMenu.js" type="text/javascript"></script>
 		<script>
 			$(function() {
 				cbpHorizontalMenu.init();
 			});
 		</script>
+		
+		
         <!---get in touch validation--->
 <script src="js/userFormVerify.js"></script>
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script>
 		$(function() {

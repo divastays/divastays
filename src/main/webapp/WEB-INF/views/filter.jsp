@@ -5,40 +5,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Filter_Search</title>
 <meta charset="utf-8">
-<link href="css/bootstrap.min.css" rel="stylesheet" />  
+<link href="css/bootstrap.min.css" rel="stylesheet" /> 
 <link href="css/header.css" rel="stylesheet" />  
-   
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" /><!-- this is for the filter.etc icons-->
- <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+ 
+ 
+
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <style>
 	.ui-autocomplete { font-size: 10px; }
 	
 }
 </style>
-<!-- this script for the API-->
-        <!--API script ends here-->
-        <!--this for the img-->
-		<style>
-		.carousel-content {
+<!--this for the img-->
+<style>
+.carousel-content {
   position: absolute;
   bottom: 10%;
   left: 5%;
   z-index: 20;
   color: white;
   text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}<!--this for the img end here-->
-		
-		
-		</style>
-        <style>
-
-    .carousel-inner img {
+}
+<!--this for the img end here-->
+</style>
+<style>
+.carousel-inner img {
       width: 100%; /* Set width to 100% */
       min-height: 200px;
     }
@@ -70,9 +66,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        
-      </ul>
+   
       <ul class="nav navbar-nav navbar-right">
      
         <li class="dropdown">
@@ -138,11 +132,7 @@
       
         <li>
           <a href="#" ><span class="fa fa-filter" aria-hidden="true"  data-toggle="modal" data-target="#myModal">&nbsp;<b><span>Filter</b></span></a>
-          
-          
-     
-          		
-     </li>
+        </li>
     
         <li><a href="#"><span class="fa fa-sort" aria-hidden="true"  data-toggle="modal" data-target="#myModal1">&nbsp;<b>Sort</b></span></a></li>
    <div class="modal fade" id="myModal1" role="dialog">

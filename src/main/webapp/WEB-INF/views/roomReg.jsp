@@ -28,14 +28,27 @@
        <h1>Room Details</h1>
     </div>
    <div class="form-row" style="float:left; width:50%;">
-      <label>
-        <span>Room ID</span>
-            <input type="text" name="roomId" id="roomId" placeholder="Room ID" onBlur="CheckRoomID(); return false;" autocomplete="off" required>
+    <label>
+        <span>House ID</span>
+            <input type="text" name="houseId" id="houseId" disabled="disabled">
      </label>
+     <label>
+            <span>Room Type</span>
+               <select name="roomType" class="form-control selectpicker" id="roomType" required>
+                    <option value="">Select Room Type</option>
+                    <option value="hall">Hall</option>
+                    <option value="bed">Bed</option>
+                    <option value="kitchen">Kitchen</option>
+               </select>
+           </label>
       <label>
-        <span>Number Of Bed</span>
-            <input type="text" name="NumberOfBed" id="bed" placeholder="Bed" onBlur="CheckBed(); return false;" autocomplete="off" required>
-      </label>
+              <span>Food Availability</span>
+                 <select name="foodAvailability" class="form-control selectpicker" id="foodAvailability" required>
+                     <option value="">Select Availability</option>
+                     <option value="yes">Yes</option>
+                     <option value="no">No</option>
+                </select>
+            </label>
     <div class="form-row" style="float:left;">
       <table id="table" class="table table-bordered" style="background-color:#FFFFFF">
         <thead>
@@ -89,23 +102,15 @@
    </div>
  </div>
        <div class="form-row" style="float:left; width:50%;">
-          <label>
-            <span>Room Type</span>
-               <select name="roomType" class="form-control selectpicker" id="roomType" required>
-                    <option value="">Select Room Type</option>
-                    <option value="hall">Hall</option>
-                    <option value="bed">Bed</option>
-                    <option value="kitchen">Kitchen</option>
-               </select>
-           </label>
-           <label>
-              <span>Food Availability</span>
-                 <select name="foodAvailability" class="form-control selectpicker" id="foodAvailability" required>
-                     <option value="">Select Availability</option>
-                     <option value="yes">Yes</option>
-                     <option value="no">No</option>
-                </select>
-            </label>
+        <label>
+        <span>Room ID</span>
+            <input type="text" name="roomId" id="roomId" placeholder="Room ID" onBlur="CheckRoomID(); return false;" autocomplete="off" required>
+     </label>
+            <label>
+        <span>Number Of Bed</span>
+            <input type="text" name="NumberOfBed" id="bed" placeholder="Bed" onBlur="CheckBed(); return false;" autocomplete="off" required>
+      </label>
+         
            <label>
              <span>Upload Photo 1</span>
                <input type="file" name="img1" id="img1" onBlur="CheckImg1(); return false;" autocomplete="off"  required>
@@ -119,7 +124,7 @@
               <input type="file" name="img3" id="img3" onBlur="CheckImg3(); return false;" autocomplete="off"  required>
            </label>
         </div>
-            <div class="form-row" style="width:50%;">
+            <div class="form-row" style="width:50%;"  style="background-color: #6caee0;">
                 <button type="submit" value="Submit" >Submit</button>
             </div>		
         </form>

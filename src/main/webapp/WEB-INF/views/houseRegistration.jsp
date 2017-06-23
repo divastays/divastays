@@ -15,8 +15,8 @@
             </div>
 			<div class="form-row" style="float:left; width:50%;">
                 <label>
-                    <span>Aadhar Number</span>
-                    <input type="text" name="aadharNumber" id="aadharNumber" placeholder="Aadhar Number" onBlur="checkAadharNumber(); CheckAadhar(); return false;" autocomplete="off" required>
+                    <span>Owner ID</span>
+                    <input type="text" name="ownerId" id="ownerId" placeholder="Owner ID">
                 </label>
                    <label>
                     <span>Tenancy Type</span>

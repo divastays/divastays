@@ -119,34 +119,36 @@ public class UserController {
 		return "houseRegistration";
 	}
 	//save house
-	@RequestMapping(value = "/saveHouse",method = RequestMethod.POST)
-	public String saveHouse(@RequestParam("aadharNumber")Long aadharNumber,@RequestParam("tenancyType")String tenancyType,@RequestParam("room")Integer room,@RequestParam("city")String city,@RequestParam("subcategory1")String state,@RequestParam("rent")Double rent,@RequestParam("area")Double area,@RequestParam("img1")MultipartFile img1,@RequestParam("img2")MultipartFile img2,@RequestParam("houseName")String houseName,@RequestParam("floorNumber")Integer floorNumber,
-	@RequestParam("address")String address,@RequestParam("subcategory")String locationArea,@RequestParam("subcategory2")String country,@RequestParam("deposit")Double deposit,@RequestParam("foodPreference")String foodPreference,@RequestParam("img3")MultipartFile img3) throws IOException,SerialException
-	{
-		House house=new House();
-		house.setAadharNumber(aadharNumber);
-		house.setAddress(address);
-		house.setArea(area);
-		house.setDeposit(deposit);
-		house.setFloorNumber(floorNumber);
-		house.setFoodPreference(foodPreference);
-		house.setRent(rent);
-		house.setRoom(room);
-		house.setState(state);
-		house.setCity(city);
-		house.setCountry(country);
-		house.setLocationArea(locationArea);
-		house.setTenancyType(tenancyType);
-		byte[] img11 = img1.getBytes();
-		byte[] img13 = img2.getBytes();
-		byte[] img12 = img3.getBytes();
-		house.setImg1(img11);
-		house.setImg2(img12);
-		house.setImg3(img13);
-		house.setHouseName(houseName);
-		houseService.saveHouse(house);
-		return "redirect:/showRoomReg";
-	}
+		@RequestMapping(value = "/saveHouse",method = RequestMethod.POST)
+		public String saveHouse(@RequestParam("ownerId")Long oId,@RequestParam("tenancyType")String tenancyType,@RequestParam("room")Integer room,@RequestParam("city")String city,@RequestParam("subcategory1")String state,@RequestParam("rent")Double rent,@RequestParam("area")Double area,@RequestParam("img1")MultipartFile img1,@RequestParam("img2")MultipartFile img2,@RequestParam("houseName")String houseName,@RequestParam("floorNumber")Integer floorNumber,
+		@RequestParam("address")String address,@RequestParam("subcategory")String locationArea,@RequestParam("subcategory2")String country,@RequestParam("deposit")Double deposit,@RequestParam("foodPreference")String foodPreference,@RequestParam("img3")MultipartFile img3,Model model) throws IOException,SerialException
+		{
+			System.out.println(oId);
+			House house=new House();
+			house.setAddress(address);
+			house.setArea(area);
+			house.setDeposit(deposit);
+			house.setFloorNumber(floorNumber);
+			house.setFoodPreference(foodPreference);
+			house.setRent(rent);
+			house.setRoom(room);
+			house.setState(state);
+			house.setCity(city);
+			house.setCountry(country);
+			house.setLocationArea(locationArea);
+			house.setTenancyType(tenancyType);
+			byte[] img11 = img1.getBytes();
+			byte[] img13 = img2.getBytes();
+			byte[] img12 = img3.getBytes();
+			house.setImg1(img11);
+			house.setImg2(img12);
+			house.setImg3(img13);
+			house.setHouseName(houseName);
+			houseService.saveHouse(house,oId);
+			model.addAttribute("hId",house.gethId());
+			model.addAttribute("room",room);
+			return "roomReg";
+		}
 	
 	//show owner reg page
 	@RequestMapping(value = "/showOwnerReg")
@@ -155,20 +157,21 @@ public class UserController {
 		return "ownerRegistration";
 	}
 	//save owner
-	@RequestMapping(value = "/saveOwner", method = RequestMethod.POST)
-	public String saveOwner(@RequestParam("firstName") String firstName,@RequestParam("contactNumber")Long contactNumber,@RequestParam("password1") String password,
-			@RequestParam("aadharNumber") Long aadharNumber,@RequestParam("lastName") String lastName,@RequestParam("email") String email)
-	{
-		Owner owner=new Owner();
-		owner.setFirstName(firstName);
-		owner.setLastName(lastName);
-		owner.setContactNumber(contactNumber);
-		owner.setEmail(email);
-		owner.setAadharNumber(aadharNumber);
-		owner.setPassword(password);
-		ownerService.saveOwner(owner);
-		return "redirect:/showHouseReg";
-	}
+		@RequestMapping(value = "/saveOwner", method = RequestMethod.POST)
+		public String saveOwner(@RequestParam("firstName") String firstName,@RequestParam("contactNumber")Long contactNumber,@RequestParam("password1") String password,
+				@RequestParam("aadharNumber") Long aadharNumber,@RequestParam("lastName") String lastName,@RequestParam("email") String email,Model model)
+		{
+			Owner owner=new Owner();
+			owner.setFirstName(firstName);
+			owner.setLastName(lastName);
+			owner.setContactNumber(contactNumber);
+			owner.setEmail(email);
+			owner.setAadharNumber(aadharNumber);
+			owner.setPassword(password);
+			ownerService.saveOwner(owner);
+			model.addAttribute("oId",owner.getoId());
+			return "houseRegistration";
+		}
 	
 	
 	//show deal1 page
@@ -276,34 +279,35 @@ public class UserController {
 				return "roomReg";
 			}
 		//save room details
-		@RequestMapping(value = "/saveRoom", method = RequestMethod.POST)
-		public String saveRoom(@RequestParam("roomId")Long roomId,@RequestParam("roomType")String roomType,@RequestParam("ac")String ac,@RequestParam("wifi")String wifi,
-				@RequestParam("bathroom")String bathroom,@RequestParam("geyser")String geyser,@RequestParam("bed")String bed,@RequestParam("swimmingPool")String swimmingPool,
-				@RequestParam("gym")String gym,@RequestParam("NumberOfBed")Integer numberOfBed,@RequestParam("foodAvailability")String foodAvailability,@RequestParam("img1")MultipartFile img1,@RequestParam("img2")MultipartFile img2,@RequestParam("img3")MultipartFile img3) throws IOException
-		{
-			Room room=new Room();
-			room.setRoomId(roomId);
-			room.setRoomtype(roomType);
-			room.setAc(ac);
-			room.setWifi(wifi);
-			room.setBathroom(bathroom);
-			room.setGeyser(geyser);
-			room.setBed(bed);
-			room.setSwimmingPool(swimmingPool);
-			room.setGym(gym);
-			room.setNumberOfBed(numberOfBed);
-			room.setFoodAvailability(foodAvailability);
-			byte[] img11 = img1.getBytes();
-			byte[] img13 = img2.getBytes();
-			byte[] img12 = img3.getBytes();
-			room.setImg1(img11);
-			room.setImg2(img12);
-			room.setImg3(img13);
-			roomService.saveRoom(room);
-			return "success";
-		}
-		
-		
+				@RequestMapping(value = "/saveRoom", method = RequestMethod.POST)
+				public String saveRoom(@RequestParam("houseId")Long hId,@RequestParam("roomId")Long roomId,@RequestParam("roomType")String roomType,@RequestParam("ac")String ac,@RequestParam("wifi")String wifi,
+						@RequestParam("bathroom")String bathroom,@RequestParam("geyser")String geyser,@RequestParam("bed")String bed,@RequestParam("swimmingPool")String swimmingPool,
+						@RequestParam("gym")String gym,@RequestParam("NumberOfBed")Integer numberOfBed,@RequestParam("foodAvailability")String foodAvailability,@RequestParam("img1")MultipartFile img1,@RequestParam("img2")MultipartFile img2,@RequestParam("img3")MultipartFile img3) throws IOException
+				{
+					//System.out.println(numberOfRooms);
+					Room room=new Room();
+					room.setRoomId(roomId);
+					room.setRoomtype(roomType);
+					room.setAc(ac);
+					room.setWifi(wifi);
+					room.setBathroom(bathroom);
+					room.setGeyser(geyser);
+					room.setBed(bed);
+					room.setSwimmingPool(swimmingPool);
+					room.setGym(gym);
+					room.setNumberOfBed(numberOfBed);
+					room.setFoodAvailability(foodAvailability);
+					System.out.println(room);
+					byte[] img11 = img1.getBytes();
+					byte[] img13 = img2.getBytes();
+					byte[] img12 = img3.getBytes();
+					room.setImg1(img11);
+					room.setImg2(img12);
+					room.setImg3(img13);
+					roomService.saveRoom(room,hId);
+					return "success";
+				}
+				
 		
 		@RequestMapping(value = "/showComposeMail")
 		public String showComposeMail()
@@ -370,24 +374,6 @@ public class UserController {
 					User user=new User();
 					user.setAadharNumber(aadharNumber);
 					boolean flag=userService.checkAadharNumber(user);
-					if(flag==true)
-					{
-						msg="alreday used Aadhar number";
-					}
-					else
-					{
-						msg="";
-					}
-					return msg;
-				}
-				//check house owner aadhar Number
-				@RequestMapping(value = "/checkOwnerAadharNumber")
-				public @ResponseBody String checkOwnerAadharNumber(@RequestParam("aadharNumber") Long aadharNumber)
-				{
-					String msg=null;
-					House house=new House();
-					house.setAadharNumber(aadharNumber);
-					boolean flag=houseService.checkAadharNumber(house);
 					if(flag==true)
 					{
 						msg="alreday used Aadhar number";

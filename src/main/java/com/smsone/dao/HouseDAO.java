@@ -6,7 +6,7 @@ import com.smsone.model.House;
 
 
 public interface HouseDAO {
-	public void saveHouse(House house);
+	public void saveHouse(House house,Long oId);
 	public List<House> list(Integer offset, Integer maxResults);
 	public List<House> listHouse(House house,Integer offset, Integer maxResults);
 	public List<House> listHouseByFilter(House house,Integer offset, Integer maxResults);
@@ -16,4 +16,5 @@ public interface HouseDAO {
 	public boolean checkAadharNumber(House house);
 	public Long countByFilter(House house);
 	public Long countAllFilter(House house);
+	public List<House> listHouseByadvancedFilter(String[] facilities);
 }

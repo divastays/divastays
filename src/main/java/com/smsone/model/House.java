@@ -24,8 +24,6 @@ public class House implements Serializable
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long hId;
-	@Column(nullable=false,length=12,unique = true)
-	private Long aadharNumber;
 	@Column(nullable=false,length=20)
 	private Integer floorNumber;
 	@Column(nullable=false,length=20)
@@ -70,12 +68,6 @@ public class House implements Serializable
 	}
 	public void sethId(Long hId) {
 		this.hId = hId;
-	}
-	public Long getAadharNumber() {
-		return aadharNumber;
-	}
-	public void setAadharNumber(Long aadharNumber) {
-		this.aadharNumber = aadharNumber;
 	}
 	public Integer getFloorNumber() {
 		return floorNumber;
@@ -197,13 +189,12 @@ public class House implements Serializable
 	public House() {
 		super();
 	}
-	public House(Long hId, Long aadharNumber, Integer floorNumber, Double rent, Double area, String tenancyType,
-			Integer room, String foodPreference, Double deposit, String houseName, String state, String locationArea,
-			String country, String city, String address, byte[] img1, byte[] img2, byte[] img3, Set<User> user,
-			Set<Room> rooms, Owner owner) {
+	public House(Long hId, Integer floorNumber, Double rent, Double area, String tenancyType, Integer room,
+			String foodPreference, Double deposit, String houseName, String state, String locationArea, String country,
+			String city, String address, byte[] img1, byte[] img2, byte[] img3, Set<User> user, Set<Room> rooms,
+			Owner owner) {
 		super();
 		this.hId = hId;
-		this.aadharNumber = aadharNumber;
 		this.floorNumber = floorNumber;
 		this.rent = rent;
 		this.area = area;
@@ -228,7 +219,6 @@ public class House implements Serializable
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((aadharNumber == null) ? 0 : aadharNumber.hashCode());
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((area == null) ? 0 : area.hashCode());
 		result = prime * result + ((city == null) ? 0 : city.hashCode());
@@ -260,11 +250,6 @@ public class House implements Serializable
 		if (getClass() != obj.getClass())
 			return false;
 		House other = (House) obj;
-		if (aadharNumber == null) {
-			if (other.aadharNumber != null)
-				return false;
-		} else if (!aadharNumber.equals(other.aadharNumber))
-			return false;
 		if (address == null) {
 			if (other.address != null)
 				return false;
@@ -360,12 +345,12 @@ public class House implements Serializable
 	}
 	@Override
 	public String toString() {
-		return "House [hId=" + hId + ", aadharNumber=" + aadharNumber + ", floorNumber=" + floorNumber + ", rent="
-				+ rent + ", area=" + area + ", tenancyType=" + tenancyType + ", room=" + room + ", foodPreference="
-				+ foodPreference + ", deposit=" + deposit + ", houseName=" + houseName + ", state=" + state
-				+ ", locationArea=" + locationArea + ", country=" + country + ", city=" + city + ", address=" + address
-				+ ", img1=" + Arrays.toString(img1) + ", img2=" + Arrays.toString(img2) + ", img3="
-				+ Arrays.toString(img3) + ", user=" + user + ", rooms=" + rooms + ", owner=" + owner + "]";
+		return "House [hId=" + hId + ", floorNumber=" + floorNumber + ", rent=" + rent + ", area=" + area
+				+ ", tenancyType=" + tenancyType + ", room=" + room + ", foodPreference=" + foodPreference
+				+ ", deposit=" + deposit + ", houseName=" + houseName + ", state=" + state + ", locationArea="
+				+ locationArea + ", country=" + country + ", city=" + city + ", address=" + address + ", img1="
+				+ Arrays.toString(img1) + ", img2=" + Arrays.toString(img2) + ", img3=" + Arrays.toString(img3)
+				+ ", user=" + user + ", rooms=" + rooms + ", owner=" + owner + "]";
 	}
 	
 	

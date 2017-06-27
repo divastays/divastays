@@ -6,7 +6,7 @@ import com.smsone.model.House;
 
 
 public interface HouseService {
-	public void saveHouse(House house);
+	public void saveHouse(House house,Long oId);
 	public List<House> list(Integer offset, Integer maxResults);
 	public Long count();
 	public House getHouse(House house);

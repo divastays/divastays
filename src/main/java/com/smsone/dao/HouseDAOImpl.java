@@ -1,6 +1,8 @@
 package com.smsone.dao;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.smsone.model.House;
+import com.smsone.model.Owner;
 import com.smsone.model.User;
 @Repository
 @Transactional
@@ -21,11 +24,11 @@ public class HouseDAOImpl implements HouseDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	//save house
-	public void saveHouse(House house) {
+	/*public void saveHouse(House house,Long oId) {
 		Session session=sessionFactory.openSession();
 		session.save(house);
-		session.close();
-	}
+	session.close();
+	}*/
 	//getting house
 	@SuppressWarnings("unchecked")
 	@Transactional
@@ -47,7 +50,7 @@ public class HouseDAOImpl implements HouseDAO {
 		Criteria criteria = session.createCriteria(House.class);
 		criteria.setFirstResult(offset!=null?offset:0);
 		criteria.setMaxResults(maxResults!=null?maxResults:10);
-		criteria.add(Restrictions.like("address","%"+house.getAddress()+"%"));
+		criteria.add(Restrictions.like("city","%"+house.getAddress()+"%"));
 		@SuppressWarnings("unchecked")
 		List<House> house1 = criteria.list();
 		
@@ -56,8 +59,8 @@ public class HouseDAOImpl implements HouseDAO {
 	public boolean checkAadharNumber(House house) {
 			Session session=sessionFactory.openSession();
 			Criteria crit=session.createCriteria(House.class);
-			Criterion c1=Restrictions.eq("aadharNumber",house.getAadharNumber());
-			crit.add(c1);
+			//Criterion c1=Restrictions.eq("aadharNumber",house.getAadharNumber());
+			//crit.add(c1);
 			@SuppressWarnings("unchecked")
 			List<User> list=crit.list();
 			if(list.isEmpty())
@@ -102,7 +105,7 @@ public class HouseDAOImpl implements HouseDAO {
 			c3=Restrictions.ge("rent",(double)100);
 		}
 		Criterion c4=Restrictions.eq("foodPreference",house.getFoodPreference());
-		Criterion c5=Restrictions.and(c4,c3);
+		Criterion c5=Restrictions.and(c1,c4,c3);
 		criteria.add(c5);
 		@SuppressWarnings("unchecked")
 		List<House> house1 = criteria.list();
@@ -127,10 +130,31 @@ public class HouseDAOImpl implements HouseDAO {
 		public Long countAllFilter(House house) {
 			Session session=sessionFactory.openSession();
 			Query query = session.createQuery(
-			        "select count(*) from House h where h.address=:address and h.accomodation=:accomodation and h.foodPreference=:foodPreference");
-			query.setString("address",house.getAddress());
+			        "select count(*) from House h where h.locationArea=:locationArea and h.foodPreference=:foodPreference and h.rent>1000=:rent");
+			query.setString("address",house.getLocationArea());
 			//query.setString("accomodation",house.getAccomodation());
 			query.setString("foodPreference",house.getFoodPreference());
+			if(house.getRent()==1000)
+			{
+				query.setDouble("rent",(double)1000);
+			}
+			else if(house.getRent()==1500)
+			{
+				query.setDouble("rent",(double)1000);
+			}
+			else if(house.getRent()==2500)
+			{
+				query.setDouble("rent",(double)1000);
+				
+			}
+			else if(house.getRent()==3000)
+			{
+				query.setDouble("rent",(double)1000);
+			}
+			else if(house.getRent()==100)
+			{
+				query.setDouble("rent",(double)1000);
+			}
 			Long count = (Long)query.uniqueResult();
 			return count;
 		}
@@ -145,6 +169,29 @@ public class HouseDAOImpl implements HouseDAO {
 			
 			return house1;
 		}
-		
+		public List<House> listHouseByadvancedFilter(String[] facilities) {
+			Session session=sessionFactory.openSession();
+			Query query=session.createQuery("from Job where id not in (select hId from Room where )");
+			return null;
+		}
+		//save house with owner
+		public void saveHouse(House house,Long oId) {
+			Session session=sessionFactory.openSession();
+			Owner owner=(Owner)session.load(Owner.class,oId);
+			//Criteria crit=session.createCriteria(Owner.class);
+			//Criterion c1=Restrictions.eq("aadharNumber",house.getAadharNumber());
+			//crit.add(c1);
+			//@SuppressWarnings("unchecked")
+			//List<Owner> list=crit.list();
+			//Owner owner=(Owner)list.get(0);
+			//Owner owner=(Owner)session.load(Owner.class,(Long)1);
+			//System.out.println(owner);
+			//Set<House> houses=new HashSet<House>();
+			//houses.add(house);
+			//owner.setHouse(houses);
+			house.setOwner(owner);
+			session.save(house);
+			session.close();
+		}
 		
 }

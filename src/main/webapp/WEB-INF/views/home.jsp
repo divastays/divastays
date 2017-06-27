@@ -186,7 +186,6 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-<%= session.getAttribute( "email" ) %>
 
  <jsp:include page="cityDropDown.jsp"></jsp:include>
 

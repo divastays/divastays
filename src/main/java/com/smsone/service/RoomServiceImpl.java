@@ -10,8 +10,8 @@ public class RoomServiceImpl implements RoomService {
 	@Autowired
 	RoomDAO roomDAO;
 
-	public void saveRoom(Room room) {
-		roomDAO.saveRoom(room);
+	public void saveRoom(Room room,Long hId) {
+		roomDAO.saveRoom(room,hId);
 	}
 
 }

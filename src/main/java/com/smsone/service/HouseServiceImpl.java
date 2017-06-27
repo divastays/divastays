@@ -12,9 +12,9 @@ import com.smsone.model.House;
 public class HouseServiceImpl implements HouseService {
 	@Autowired
 	HouseDAO houseDAO;
-	public void saveHouse(House house)
+	public void saveHouse(House house,Long oId)
    	{
-		houseDAO.saveHouse(house);
+		houseDAO.saveHouse(house,oId);
 	}
 	public List<House> list(Integer offset, Integer maxResults) {
 		return houseDAO.list(offset, maxResults);

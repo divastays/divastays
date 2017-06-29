@@ -49,10 +49,10 @@ public class UserController {
 	@RequestMapping(value = "/showHome")
 	public String showHome(HttpServletResponse response)
 	{
-		response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
-		response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
-		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
-		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+		response.setHeader("Cache-Control","no-cache"); 
+		response.setHeader("Cache-Control","no-store");
+		response.setDateHeader("Expires", 0); 
+		response.setHeader("Pragma","no-cache");
 		return "home";
 	}
 	
@@ -60,10 +60,10 @@ public class UserController {
 	@RequestMapping(value = "/showHouseInfo/showHome")
 	public String showHome1(HttpServletResponse response)
 	{
-		response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
-		response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
-		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
-		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+		response.setHeader("Cache-Control","no-cache"); 
+		response.setHeader("Cache-Control","no-store"); 
+		response.setDateHeader("Expires", 0); 
+		response.setHeader("Pragma","no-cache"); 
 		return "redirect:/showHome";
 	}
 	
@@ -71,10 +71,10 @@ public class UserController {
 	@RequestMapping(value = "/showShortTerm")
 	public String showShortTerm(HttpServletResponse response)
 	{
-		response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
-		response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
-		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
-		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+		response.setHeader("Cache-Control","no-cache"); 
+		response.setHeader("Cache-Control","no-store"); 
+		response.setDateHeader("Expires", 0); 
+		response.setHeader("Pragma","no-cache"); 
 		return "shortTerm";
 	}
 	
@@ -82,10 +82,10 @@ public class UserController {
 	@RequestMapping(value = "/showLongTerm")
 	public String showLongTerm(HttpServletResponse response)
 	{
-		response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
-		response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
-		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
-		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+		response.setHeader("Cache-Control","no-cache");
+		response.setHeader("Cache-Control","no-store"); 
+		response.setDateHeader("Expires", 0); 
+		response.setHeader("Pragma","no-cache");
 		return "longTerm";
 	}
 	//show Owner page
@@ -500,10 +500,10 @@ public class UserController {
 				//show filter with results 
 				@RequestMapping(value="/showFilter")
 				public String list(Model model, Integer offset, Integer maxResults,HttpServletResponse response){
-					response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
-					response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
-					response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
-					response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+					response.setHeader("Cache-Control","no-cache"); 
+					response.setHeader("Cache-Control","no-store"); 
+					response.setDateHeader("Expires", 0); 
+					response.setHeader("Pragma","no-cache"); 
 					model.addAttribute("house", houseService.list(offset, maxResults));
 					model.addAttribute("count", houseService.count());
 					model.addAttribute("offset", offset);
@@ -556,10 +556,10 @@ public class UserController {
 				}
 				@RequestMapping("/logout")
 				public String logout(HttpSession session,HttpServletResponse response) {
-					response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
-					response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
-					response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
-					response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+					response.setHeader("Cache-Control","no-cache"); 
+					response.setHeader("Cache-Control","no-store"); 
+					response.setDateHeader("Expires", 0); 
+					response.setHeader("Pragma","no-cache"); 
 					session.removeAttribute("User");
 					session.removeAttribute("email");
 					session.invalidate();

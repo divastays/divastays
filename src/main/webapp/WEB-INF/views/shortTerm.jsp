@@ -3,6 +3,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Pragma" content="no-cache">
+ <meta http-equiv="Cache-Control" content="no-cache">
+ <meta http-equiv="Expires" content="Sat, 11 Feb 2013 16:00:00 GMT">
 <title>divaStays_short_term</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -138,7 +141,16 @@
       </ul>
      
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <% 
+        String email =  (String)session.getAttribute("email");
+        if(email!=null)
+            {
+             out.println(email+"   <a href=\"logout\" >Logout</a>");
+            }  
+         else  
+         {
+        %>
+            <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu">
 				<li>
@@ -150,15 +162,17 @@
 									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
 								</div>
                                 or
-								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+            
+            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-											 <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+											 <input type="email" name="email" class="form-control" id="email" placeholder="Email address" required>
 										</div>
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputPassword2">Password</label>
-											 <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											 <input type="password" name="password" class="form-control" id="password"  placeholder="Password" required>
                                              <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                             <span id="empIdErr" class="errMsg"></span>
 										</div>
 										<div class="form-group">
 											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
@@ -169,7 +183,7 @@
 											 </label>
 										</div>
 								 </form>
-							</div>
+									</div>
 							<div class="bottom text-center">
 								New here ? <a href="showUserReg"><b>Join Us</b></a>
 							</div>
@@ -177,7 +191,10 @@
 				</li>
 			</ul>
         </li>
-        <li><a href="showHelp">Help</a></li>
+        <%
+        }
+        %>	 									
+          <li><a href="showHelp">Help</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

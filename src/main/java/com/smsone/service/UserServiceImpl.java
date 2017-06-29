@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
 	public boolean checkAadharNumber(User user) {
 		return userDAO.checkAadharNumber(user);
 	}
-	public boolean checkLogin(User user) {
+	public User checkLogin(User user) {
 		return userDAO.checkLogin(user);
 	}
 

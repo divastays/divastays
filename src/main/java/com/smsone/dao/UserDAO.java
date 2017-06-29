@@ -7,5 +7,5 @@ public interface UserDAO {
 	public boolean checkEmail(User user);
 	public boolean checkContactNumber(User user);
 	public boolean checkAadharNumber(User user);
-	public boolean checkLogin(User user);
+	public User checkLogin(User user);
 }

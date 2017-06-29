@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.rowset.serial.SerialException;
 
@@ -46,29 +47,45 @@ public class UserController {
 	private MailSender mailSender;
 	//show home
 	@RequestMapping(value = "/showHome")
-	public String showHome()
+	public String showHome(HttpServletResponse response)
 	{
+		response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+		response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 		return "home";
 	}
 	
 	//show HouseInfo Home
 	@RequestMapping(value = "/showHouseInfo/showHome")
-	public String showHome1()
+	public String showHome1(HttpServletResponse response)
 	{
+		response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+		response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 		return "redirect:/showHome";
 	}
 	
 	//show short term
 	@RequestMapping(value = "/showShortTerm")
-	public String showShortTerm()
+	public String showShortTerm(HttpServletResponse response)
 	{
+		response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+		response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 		return "shortTerm";
 	}
 	
 	//show long term
 	@RequestMapping(value = "/showLongTerm")
-	public String showLongTerm()
+	public String showLongTerm(HttpServletResponse response)
 	{
+		response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+		response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+		response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+		response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 		return "longTerm";
 	}
 	//show Owner page
@@ -232,14 +249,6 @@ public class UserController {
 	{
 		return "filter";
 	}	
-	//sort record
-	@RequestMapping(value="/sortPrice")
-	public String Sortist(@RequestParam("priceSort")String priceSort,Model model, Integer offset, Integer maxResults){
-		model.addAttribute("house", houseService.list(offset, maxResults));	
-		model.addAttribute("count", houseService.count());
-		model.addAttribute("offset", offset);
-			return "filter";
-		}	
 		@RequestMapping(value = "/showHomeResult")
 		public String showHomeResult()
 		{
@@ -251,26 +260,25 @@ public class UserController {
 		{
 			return "header";
 		}
-		
-		
-		@RequestMapping(value = "/showCheckEmail")
-		public String showSuccess()
-		{
-			return "checkEmailVerify";
-		}
-		
-		
-	
-		
+				
 		//show house info
 		@RequestMapping(value = "/showHouseInfo/{hId}")
-		public String showHouseInfo(@PathVariable("hId") Long hId,Model model)
+		public String showHouseInfo(@PathVariable("hId") Long hId,Model model,HttpSession session)
 		{
-			House house=new House();
-			house.sethId(hId);
-			house=houseService.getHouse(house);
-			model.addAttribute("house",house);
-			return "houseInfo";
+			User user=(User)session.getAttribute("user");
+			if(user!=null)
+			{
+				House house=new House();
+				house.sethId(hId);
+				house=houseService.getHouse(house);
+				model.addAttribute("house",house);
+				return "houseInfo";
+			}
+			else
+			{
+				return "redirect:/showFilter";
+			}
+			
 		}
 		//show room reg form
 		@RequestMapping(value = "/showRoomReg")
@@ -307,28 +315,7 @@ public class UserController {
 					roomService.saveRoom(room,hId);
 					return "success";
 				}
-				
 		
-		@RequestMapping(value = "/showComposeMail")
-		public String showComposeMail()
-		{
-			return "composeMail";
-		}
-		
-		
-		@RequestMapping("/checkId1")
-		public @ResponseBody String checkEmpIdExist(@RequestParam("email")int email){
-			String msg=null;
-			//if
-			
-			if(email==1){
-				msg="Employee with id "+email+", already Exist";
-			}else{
-				msg="";
-			}
-			
-			return msg;
-		}
 		//check user mail
 		@RequestMapping(value = "/checkUserMail")
 		public @ResponseBody String checkEmail(@RequestParam("email") String email)
@@ -480,9 +467,17 @@ public class UserController {
 				}
 				
 				@RequestMapping(value = "/showRoomInfo")
-				public String showRoominfo1()
+				public String showRoominfo1(HttpSession session)
 				{
+					User user=(User)session.getAttribute("user");
+					if(user==null)
+					{
+						return "";
+					}
+					else
+					{
 					return "roomInfo";
+					}
 					
 				}
 				
@@ -504,7 +499,11 @@ public class UserController {
 				
 				//show filter with results 
 				@RequestMapping(value="/showFilter")
-				public String list(Model model, Integer offset, Integer maxResults){
+				public String list(Model model, Integer offset, Integer maxResults,HttpServletResponse response){
+					response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+					response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+					response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+					response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
 					model.addAttribute("house", houseService.list(offset, maxResults));
 					model.addAttribute("count", houseService.count());
 					model.addAttribute("offset", offset);
@@ -533,29 +532,38 @@ public class UserController {
 				}
 				//login check
 				@RequestMapping(value = "/login", method = RequestMethod.POST)
-				public @ResponseBody  String login(@RequestParam("email") String email,@RequestParam("password") String password,HttpSession session)
+				public String login(@RequestParam("email") String email,@RequestParam("password") String password,HttpSession session)
 				{
-					String msg=null;
+					//String msg=null;
 					User user=new User();
 					user.setEmail(email);
 					user.setPassword(password);
-					boolean flag=userService.checkLogin(user);
-					if(flag==false)
+					
+					user=userService.checkLogin(user);
+					if(user==null)
 					{
-						msg="please enter valid email and password";
+				
 					}
 					else
 					{
-						msg="";
+						String email1=user.getEmail();
+						session.setAttribute("email", email1);
+						session.setAttribute("user",user);
 					}
-					return msg;
+					return "home";
+					
 					
 				}
-			
-				
 				@RequestMapping("/logout")
-				public String logout() {
-				    return "redirect:/showHome";
+				public String logout(HttpSession session,HttpServletResponse response) {
+					response.setHeader("Cache-Control","no-cache"); //Forces caches to obtain a new copy of the page from the origin server
+					response.setHeader("Cache-Control","no-store"); //Directs caches not to store the page under any circumstance
+					response.setDateHeader("Expires", 0); //Causes the proxy cache to see the page as "stale"
+					response.setHeader("Pragma","no-cache"); //HTTP 1.0 backward compatibility
+					session.removeAttribute("User");
+					session.removeAttribute("email");
+					session.invalidate();
+				    return "home";
 				}
 				
 				//filter page response with filter
@@ -581,8 +589,12 @@ public class UserController {
 					user.setProfession(profession);
 					user.setMotherTongue(language);
 					house.setLocationArea(area);
-					//house.setAccomodation(accomodation);
 					house.setRent(rent);
+					session.setAttribute("profession", profession);
+					session.setAttribute("language", language);
+					session.setAttribute("food", food);
+					session.setAttribute("area", area);
+					session.setAttribute("rent",rent);
 					house.setFoodPreference(food);
 					model.addAttribute("house", houseService.listHouseByFilter(house,offset, maxResults));
 					model.addAttribute("count", houseService.count());
@@ -591,6 +603,31 @@ public class UserController {
 					return "filter";
 				}
 				
-				
-				
+				@RequestMapping(value="/showFilterWithFacilities")
+				public String showFilterWithFacilities(@RequestParam("facilities") String facilities[],Model model,Integer offset, Integer maxResults,HttpSession session)
+				{
+					String profeesion=(String)session.getAttribute("profession");
+					String language=(String)session.getAttribute("language");
+					String food=(String)session.getAttribute("food");
+					String area=(String)session.getAttribute("area");
+					Double rent=(Double)session.getAttribute("rent");
+					User user=new User();
+					user.setProfession(profeesion);
+					user.setMotherTongue(language);
+					House house=new House();
+					house.setRent(rent);
+					house.setLocationArea(area);
+					model.addAttribute("house", houseService.listHouseByadvancedFilter(house,user,offset,maxResults,facilities));
+					model.addAttribute("count", houseService.count());
+					model.addAttribute("offset", offset);
+					return "filter";
+				}
+				//sort record
+				@RequestMapping(value="/sortPrice")
+				public String Sortist(@RequestParam("priceSort")String priceSort,Model model, Integer offset, Integer maxResults){
+					model.addAttribute("house", houseService.list(offset, maxResults));	
+					model.addAttribute("count", houseService.count());
+					model.addAttribute("offset", offset);
+						return "filter";
+					}	
 }

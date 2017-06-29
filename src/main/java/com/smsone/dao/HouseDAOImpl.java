@@ -193,5 +193,12 @@ public class HouseDAOImpl implements HouseDAO {
 			session.save(house);
 			session.close();
 		}
+
+		public List<House> listHouseByadvancedFilter(House house, User user, Integer offset, Integer maxResults,
+				String[] facilities) {
+			
+			
+			return null;
+		}
 		
 }

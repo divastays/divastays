@@ -30,4 +30,15 @@
         <page-encoding>UTF-8</page-encoding>
     </jsp-property-group>
 </jsp-config>
+<session-config>
+  <session-timeout>10</session-timeout>
+</session-config>
+ <filter>
+    <filter-name>noCacheFilter</filter-name>
+    <filter-class>com.smsone.util.NoBrowserCacheFilter</filter-class>
+ </filter>
+ <filter-mapping>
+  <filter-name>noCacheFilter</filter-name>
+  <url-pattern>/</url-pattern>// urls that not cached 
+ </filter-mapping>
 </web-app>

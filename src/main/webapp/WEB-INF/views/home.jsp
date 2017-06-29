@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Pragma" content="no-cache">
+ <meta http-equiv="Cache-Control" content="no-cache">
+ <meta http-equiv="Expires" content="Sat, 11 Feb 2013 16:00:00 GMT">
  <title>home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,8 +24,6 @@
 <style>
 #first{ height:500px;}
 </style>
-
-
   <style>
 	.button {
     background-color: rgb(243,210,230); /* Green */
@@ -119,7 +120,6 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body  onload="initialize()">
-	
     <nav class="navbar navbar-default navbar-inverse" role="navigation" style="background-color: rgb(243,210,230);">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -142,7 +142,16 @@
     
       <ul class="nav navbar-nav navbar-right">
       <li><a href="showOwnerPage">House Owner</a></li>
-        <li class="dropdown">
+         <% 
+        String email =  (String)session.getAttribute("email");
+        if(email!=null)
+            {
+        	 out.println(email+"   <a href=\"logout\" >Logout</a>");
+            }  
+         else  
+         {
+        %>
+            <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu">
 				<li>
@@ -154,7 +163,8 @@
 									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
 								</div>
                                 or
-								 <form class="form" role="form" method="post"  accept-charset="UTF-8" id="login-nav">
+            
+            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
 											 <input type="email" name="email" class="form-control" id="email" placeholder="Email address" required>
@@ -166,7 +176,7 @@
                                              <span id="empIdErr" class="errMsg"></span>
 										</div>
 										<div class="form-group">
-											 <button type="submit" class="btn btn-primary btn-block" onClick="checkLogin();">Sign in</button>
+											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
 										</div>
 										<div class="checkbox">
 											 <label>
@@ -174,7 +184,7 @@
 											 </label>
 										</div>
 								 </form>
-							</div>
+									</div>
 							<div class="bottom text-center">
 								New here ? <a href="showUserReg"><b>Join Us</b></a>
 							</div>
@@ -182,14 +192,14 @@
 				</li>
 			</ul>
         </li>
+        <%
+        }
+        %>	 									
         <li><a href="showHelp">Help</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-
  <jsp:include page="cityDropDown.jsp"></jsp:include>
-
-
 <div class="jumbotron" style="background-color:#ffffff">
    <div class="header-content" align="center">
     <div class="inner" style="margin-top:100px;">
@@ -648,26 +658,13 @@
 <script src="js/userFormVerify.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script>
-function checkLogin()
+function logout()
 {
-	 var email=document.getElementById( "email" ).value;
-	 var password=document.getElementById( "password" ).value;
-
 	 $.ajax({
-			url:"login",
-			 type: 'POST',
-			data:"email="+email+"&password="+password,
+			url:"logout",
 			success:function(resText){
 				if(resText!=""){
-					alert(resText);
-				}
-				
-				if(resText!=""){
-					$("#email").val("");
-					$("#email").focus();
-					$("#password").val("");
-					$("#password").focus();
-				}
+									}
 			}
 			
 		});

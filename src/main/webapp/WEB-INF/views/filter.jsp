@@ -12,9 +12,6 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" /> 
 <link href="css/header.css" rel="stylesheet" />  
 <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" /><!-- this is for the filter.etc icons-->
- 
- 
-
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <style>
 	.ui-autocomplete { font-size: 10px; }
@@ -69,7 +66,16 @@
    
       <ul class="nav navbar-nav navbar-right">
      
-        <li class="dropdown">
+        <% 
+        String email =  (String)session.getAttribute("email");
+        if(email!=null)
+            {
+             out.println(email+"   <a href=\"logout\" >Logout</a>");
+            }  
+         else  
+         {
+        %>
+            <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu">
 				<li>
@@ -81,15 +87,17 @@
 									<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
 								</div>
                                 or
-								 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+            
+            <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-											 <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+											 <input type="email" name="email" class="form-control" id="email" placeholder="Email address" required>
 										</div>
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputPassword2">Password</label>
-											 <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+											 <input type="password" name="password" class="form-control" id="password"  placeholder="Password" required>
                                              <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                             <span id="empIdErr" class="errMsg"></span>
 										</div>
 										<div class="form-group">
 											 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
@@ -100,7 +108,7 @@
 											 </label>
 										</div>
 								 </form>
-							</div>
+									</div>
 							<div class="bottom text-center">
 								New here ? <a href="showUserReg"><b>Join Us</b></a>
 							</div>
@@ -108,10 +116,13 @@
 				</li>
 			</ul>
         </li>
-        <li><a href="showHelp">Help</a></li>
+        <%
+        }
+        %>	 									
+      <li><a href="showHelp">Help</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  < /div><!-- /.container-fluid -->
 <hr>
 
   <div class="container-fluid">
@@ -135,10 +146,16 @@
         </li>
     
         <li><a href="#"><span class="fa fa-sort" aria-hidden="true"  data-toggle="modal" data-target="#myModal1">&nbsp;<b>Sort</b></span></a></li>
+        </ul>
+        </div>
+        
+        
+<form class="form" role="form"  action="showFilter2">
    <div class="modal fade" id="myModal1" role="dialog">
+   
     <div class="modal-dialog">
 <!-- Modal content-->
-  <form action="sortPrice" role="form">
+
       <div class="modal-content" style="background-color:rgb(243,210,230)">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -155,13 +172,11 @@
                             
            <div class="modal-footer">
           <button type="button" class="btn btn-success" data-dismiss="modal">Apply</button>
-        </div>
-                      
-                    
+        </div>            
 	</div>
   </div>
-    </form>
     </div><!-- /.navbar-collapse -->
+    </form>
   </div><!-- /.container-fluid -->
 </nav><!--main nav closed-->
 
@@ -221,7 +236,7 @@
     	</div><!--form group-->
     		<div class="form-group">
       <label>Food Type</label>
-      <select id="food" class="form-control" name="food" onchange="doFilterData();">
+      <select id="food" class="form-control" name="food">
       <option value="Both">Both</option>
         <option value="Veg">Veg</option>
         <option value="Non-Veg">non-veg</option>
@@ -265,9 +280,11 @@
 		<div class align="center"><button type="submit" class="btn btn-info" style="">Search</button>
 		</div><br>
           <button type="reset" class="btn btn-info">Reset All</button>&nbsp;&nbsp;&nbsp;
-          <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#myModal">Advance Filter</button>
           </form>
-        <!--modal class start here for the  Adv filter-->  
+                
+     <form action="showFilterWithFacilities" role="form">   
+          <button type="button" data-toggle="modal" data-target="#myModal" >Advance Filter</button>
+          <!--modal class start here for the  Adv filter and also for the filter-->  
     <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
 		 <!-- Modal content-->
@@ -290,70 +307,36 @@
                 <div class="panel-body" style="background-color: rgb(243,210,230);">
                   <div class="list-group">
                     <div class="checkbox">
-                      <label><input type="checkbox" value="SwimmingPool">Swimming Pool</label>
+                      <label><input type="checkbox" name="facilities" value="swimmingPool">Swimming Pool</label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="Bar">Bar</label>
+                      <label><input type="checkbox" name="facilities" value="ac">Ac</label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="Gym">Gym</label>
+                      <label><input type="checkbox" name="facilities" value="wifi">Wifi</label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="ParkingFacility">Parking Facility</label>
+                      <label><input type="checkbox" name="facilities" value="gym">Gym</label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="ConfernceRoom">Confernce Room</label>
+                    <label><input type="checkbox" name="facilities" value="parking">Parking Facility</label>
                     </div>
                     <div class="checkbox">
-                      <label><input type="checkbox" value="WheelchairAccesible">Wheelchair Accesible</label>
-                    </div>                
-                    <div class="checkbox">
-                      <label><input type="checkbox" value="MiniFridge">Mini Fridge</label>
+                    <label><input type="checkbox" name="facilities" value="geyser">Geyser</label>
                     </div>
-                   
-                  </div><!--list group closed-->
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="facilities" value="bed">bed</label>
+                    </div>               
+				 </div><!--list group closed-->
                   </div><!--panel body closed-->
                   </div><!--3)-->
                   </div><!--2)-->
-                                    
-                  
-                  
-                  <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingfour">
-                <h4 class="panel-title">
-                  <a class="" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
-                    Collections <span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span>
-                  </a>
-                </h4>
-              </div>
-              <div id="collapsefour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingfour" aria-expanded="true">
-                <div class="panel-body" style="background-color: rgb(243,210,230);">
-                  <div class="list-group" style="background-color: rgb(243,210,230);">
-                    <div class="checkbox">
-                      <label><input type="checkbox" value="BestforCorporate" name="collections">Best for Corporate</label>
-                    </div>
-                    <div class="checkbox">
-                      <label><input type="checkbox" value="MostPopular" name="collections">Most Popular</label>
-                    </div>
-                    <div class="checkbox">
-                      <label><input type="checkbox" value="ForCouples" name="collections">For Couples</label>
-                    </div>
-                    <div class="checkbox">
-                      <label><input type="checkbox" value="LocalCheckIn" name="collections">Local Check In</label>
-                    </div>
-                  </div>
-                  <!-- List Group End Here -->
-                </div>
-              </div>
-            </div>         <!-- Panel End Here -->
-            </div><!--1)main body closed-->
-            
+			  </div><!--1)main body closed-->
            <div class="modal-footer" style="background-color: rgb(243,210,230);">
-          <button type="button" class="btn btn-success" data-dismiss="modal">Apply</button>
+          <button type="submit" class="btn btn-success">Apply</button>
       	  </div>
-
-      
-		</div><!--modal-content closed-->
+	</form>		
+	</div><!--modal-content closed-->
      </div><!--modal dialog closed-->
       </div><!--main modal closed for adv filter-->
     
@@ -471,40 +454,6 @@ function checkLogin()
 			
 		});
 }
-</script>
-	
-	
-	<script type="text/javascript">
-        function doFilterData() {
-        //var name = $('#name').val();
-        var food = $('#food').val();
-        $.ajax({
-        type: "GET",
-        url: "showFilter3",
-        data: "food=" + food,
-        success: function(response){
-        	alert(response);
-        // we have the response
-        //session.setAttribute("house",response);
-        display(response);
-        //showHouse(response);
-        },
-        error: function(e){
-        alert('Error: ' + e);
-        }
-        });
-        }
-        
-        function showHouse(response) {
-            // and here you show users on page
-            //following code just example
-
-            $('#showHouse').append("<option value='-1'>Select User</option>");
-                for ( var i = 0, len = data.length; i < len; ++i) {
-                    var user = data[i];
-                    $('#allUsers').append("<option value=\"" + user.userId + "\">" + user.userName+ "</option>");
-            }
-        }
 </script>
 </body>
 </html>

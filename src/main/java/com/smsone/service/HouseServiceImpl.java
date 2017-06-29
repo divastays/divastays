@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.smsone.dao.HouseDAO;
 import com.smsone.model.House;
+import com.smsone.model.User;
 
 @Service
 public class HouseServiceImpl implements HouseService {
@@ -39,5 +40,8 @@ public class HouseServiceImpl implements HouseService {
 	}
 	public List<House> listHouseByFilters(House house, Integer offset, Integer maxResults) {
 		return houseDAO.listHouseByFilters(house, offset, maxResults);
+	}
+	public List<House> listHouseByadvancedFilter(House house,User user,Integer offset, Integer maxResults,String[] facilities) {
+		return houseDAO.listHouseByadvancedFilter(house,user,offset,maxResults,facilities);
 	}
 }

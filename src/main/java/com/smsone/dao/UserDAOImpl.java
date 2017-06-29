@@ -70,7 +70,7 @@ public class UserDAOImpl implements UserDAO {
 		return true;
 		}
 	}
-	public boolean checkLogin(User user) {
+	public User checkLogin(User user) {
 		Session session=sessionFactory.openSession();
 		Criteria crit=session.createCriteria(User.class);
 		Criterion c1=Restrictions.eq("email",user.getEmail());
@@ -81,12 +81,14 @@ public class UserDAOImpl implements UserDAO {
 		List<User> list=crit.list();
 		if(list.isEmpty())
 		{
-			return false;
+			return null;
 		}
 		else
 		{
-		return true;
+		user=(User)list.get(0);
+		return user;
 		}
+		
 	}
 
 }

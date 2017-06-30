@@ -18,4 +18,5 @@ public interface HouseDAO {
 	public Long countByFilter(House house);
 	public Long countAllFilter(House house);
 	public List<House> listHouseByadvancedFilter(House house,User user,Integer offset, Integer maxResults,String[] facilities);
+	public void saveLat(House house);
 }

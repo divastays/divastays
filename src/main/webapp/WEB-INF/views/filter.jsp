@@ -404,6 +404,58 @@
  </div><!--2)-->
      </div><!--1)-->
         <!-- /.sidebar column end here -->
+          <div id="dvMap" style="width: 100%; height:500px; margin-top:10%;"></div>
+ <script type="text/javascript">
+ var markers = [
+	 <c:forEach var="s" items="${house}">
+	    {
+	        "label":"${s.rent}",
+	        "lat":"${s.latitude}",
+	        "lng":"${s.longitude}",
+	        "content": '<div id="iw-container">' +
+	        '<div class="iw-title">${s.houseName}</div>' +
+	        '<a href="showHouseInfo/${s.hId}"><img src="<ui:image img='${s.img1}'></ui:image>" alt="..." style="height:90px"></a>'
+	         +
+	           '<div class="iw-subTitle">${s.address}</div>' +
+	           '<div class="iw-subTitle">${s.locationArea}</div>' +
+	           '<div class="iw-subTitle">${s.city}</div>' +
+	           '<div class="iw-bottom-gradient"></div>' +
+	        '</div>'
+	    },
+	    </c:forEach>
+	];
+
+ window.onload = function () {
+	    var mapOptions = {
+	        center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+	        zoom: 12,
+	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	    };
+	    var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+
+	    var infoWindow = new google.maps.InfoWindow();
+
+	    for (i = 1; i <= markers.length; i++) {
+	        var letter= String.fromCharCode("A".charCodeAt(0) + i - 1);
+
+	        var data = markers[i - 1]
+	        var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+
+	        var marker = new google.maps.Marker({
+	            position: myLatlng,
+	            map: map,
+	            label: data.label,
+	            icon: "images/marker.png",
+	        });
+	        (function (marker, data) {
+	            google.maps.event.addListener(marker, "click", function (e) {
+	                infoWindow.setContent(data.content);
+	                infoWindow.open(map, marker);
+	            });
+	        })(marker, data);
+	    }
+	 }
+ </script>    
         
    
 
@@ -455,5 +507,6 @@ function checkLogin()
 		});
 }
 </script>
+ <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAae9SU_6aO359OSvLrFEx27cs4ervdYDU&callback=initMap"></script>
 </body>
 </html>

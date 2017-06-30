@@ -44,4 +44,8 @@ public class HouseServiceImpl implements HouseService {
 	public List<House> listHouseByadvancedFilter(House house,User user,Integer offset, Integer maxResults,String[] facilities) {
 		return houseDAO.listHouseByadvancedFilter(house,user,offset,maxResults,facilities);
 	}
+	public void saveLat(House house) {
+		houseDAO.saveLat(house);
+		
+	}
 }

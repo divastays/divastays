@@ -8,6 +8,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -199,6 +200,21 @@ public class HouseDAOImpl implements HouseDAO {
 			
 			
 			return null;
+		}
+
+		public void saveLat(House house) {
+			Session session=sessionFactory.openSession();
+			Transaction tx=session.beginTransaction();
+			House house1=(House)session.load(House.class,house.gethId());
+			house1.setLatitude(house.getLatitude());
+			house1.setLongitude(house.getLongitude());
+			session.save(house1);
+			tx.commit();
+			session.close();
+			
+			
+			
+			
 		}
 		
 }

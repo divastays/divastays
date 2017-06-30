@@ -630,4 +630,28 @@ public class UserController {
 					model.addAttribute("offset", offset);
 						return "filter";
 					}	
+				@RequestMapping(value="/saveLatLang")
+				public String saveLat(@RequestParam("Lat") double Lat,@RequestParam("Long") double Long,@RequestParam("id") long id)
+				{
+					
+					House house=new House();
+					house.setLatitude(Lat);
+					house.setLongitude(Long);
+					house.sethId(id);
+					houseService.saveLat(house);
+					return "";
+				}
+				
+				
+				
+@RequestMapping(value="/showLatLang")
+public String showLat()
+{
+	return "LatLang";
 }
+}				
+				
+				
+				
+				
+				

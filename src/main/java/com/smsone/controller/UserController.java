@@ -313,7 +313,7 @@ public class UserController {
 					room.setImg2(img12);
 					room.setImg3(img13);
 					roomService.saveRoom(room,hId);
-					return "success";
+					return "home";
 				}
 		
 		//check user mail

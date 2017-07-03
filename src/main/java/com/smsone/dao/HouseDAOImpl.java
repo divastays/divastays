@@ -72,45 +72,6 @@ public class HouseDAOImpl implements HouseDAO {
 			return true;
 			}
 		}
-	public List<House> listHouseByFilter(House house, Integer offset, Integer maxResults) {
-		Criterion c3=null;
-		Session session=sessionFactory.openSession();
-		Criteria criteria = session.createCriteria(House.class);
-		criteria.setFirstResult(offset!=null?offset:0);
-		criteria.setMaxResults(maxResults!=null?maxResults:10);
-		Criterion c1=Restrictions.eq("locationArea",house.getLocationArea());
-		//Criterion c2=Restrictions.eq("accomodation",house.getAccomodation());
-		if(house.getRent()==1000)
-		{
-		 c3=Restrictions.le("rent",(double)1000);
-		}
-		else if(house.getRent()==1500)
-		{
-			Criterion c8=Restrictions.ge("rent",(double)1000);
-			Criterion c9=Restrictions.le("rent",(double)2000);
-			 c3=Restrictions.and(c8,c9);
-		}
-		else if(house.getRent()==2500)
-		{
-			Criterion c8=Restrictions.ge("rent",(double)2000);
-			Criterion c9=Restrictions.le("rent",(double)3000);
-			 c3=Restrictions.and(c8,c9);
-		}
-		else if(house.getRent()==3000)
-		{
-		 c3=Restrictions.ge("rent",(double)3000);
-		}
-		else if(house.getRent()==100)
-		{
-			c3=Restrictions.ge("rent",(double)100);
-		}
-		Criterion c4=Restrictions.eq("foodPreference",house.getFoodPreference());
-		Criterion c5=Restrictions.and(c1,c4,c3);
-		criteria.add(c5);
-		@SuppressWarnings("unchecked")
-		List<House> house1 = criteria.list();
-		return house1;
-	}
 	
 	//counting house
 		public Long count(){
@@ -193,12 +154,54 @@ public class HouseDAOImpl implements HouseDAO {
 			session.save(house);
 			session.close();
 		}
-
+		public List<House> listHouseByFilter(House house, Integer offset, Integer maxResults) {
+			Criterion c3=null;
+			Session session=sessionFactory.openSession();
+			Criteria criteria = session.createCriteria(House.class);
+			criteria.setFirstResult(offset!=null?offset:0);
+			criteria.setMaxResults(maxResults!=null?maxResults:10);
+			Criterion c1=Restrictions.eq("locationArea",house.getLocationArea());
+			//Criterion c2=Restrictions.eq("accomodation",house.getAccomodation());
+			if(house.getRent()==1000)
+			{
+			 c3=Restrictions.le("rent",(double)1000);
+			}
+			else if(house.getRent()==1500)
+			{
+				Criterion c8=Restrictions.ge("rent",(double)1000);
+				Criterion c9=Restrictions.le("rent",(double)2000);
+				 c3=Restrictions.and(c8,c9);
+			}
+			else if(house.getRent()==2500)
+			{
+				Criterion c8=Restrictions.ge("rent",(double)2000);
+				Criterion c9=Restrictions.le("rent",(double)3000);
+				 c3=Restrictions.and(c8,c9);
+			}
+			else if(house.getRent()==3000)
+			{
+			 c3=Restrictions.ge("rent",(double)3000);
+			}
+			else if(house.getRent()==100)
+			{
+				c3=Restrictions.ge("rent",(double)100);
+			}
+			Criterion c4=Restrictions.eq("foodPreference",house.getFoodPreference());
+			Criterion c5=Restrictions.and(c1,c4,c3);
+			criteria.add(c5);
+			@SuppressWarnings("unchecked")
+			List<House> house1 = criteria.list();
+			return house1;
+		}
+		
 		public List<House> listHouseByadvancedFilter(House house, User user, Integer offset, Integer maxResults,
 				String[] facilities) {
-			
+			Session session=sessionFactory.openSession();
+			Criteria criteria = session.createCriteria(House.class);
+			criteria.setFirstResult(offset!=null?offset:0);
+			criteria.setMaxResults(maxResults!=null?maxResults:10);
+			Criterion c1=Restrictions.eq("locationArea",house.getLocationArea());
 			
 			return null;
 		}
-		
 }

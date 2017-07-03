@@ -17,5 +17,4 @@ public interface HouseService {
 	public boolean checkAadharNumber(House house);
 	public Long countByFilter(House house);
 	public List<House> listHouseByadvancedFilter(House house,User user,Integer offset, Integer maxResults,String[] facilities);
-
 }

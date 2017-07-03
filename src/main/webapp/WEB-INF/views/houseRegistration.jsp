@@ -75,7 +75,7 @@
                  <input type="file" name="img2" id="img2" onBlur="CheckImg2(); return false;" autocomplete="off"  required>
                 </label>
                 
-              
+                 
                 
              </div>
 
@@ -107,7 +107,7 @@
                 </label>
              <label>
                     <span>Deposit</span>
-                    <input type="text" name="deposit" id="deposit" placeholder="Deposit" onBlur="CheckDeposit(); return false;" autocomplete="off" required>
+                    <input type="text" name="deposit" id="deposit" placeholder="Deposit" onBlur="getLatLong();CheckDeposit(); return false;" autocomplete="off" required>
                 </label>
              
            
@@ -126,12 +126,14 @@
                    <span>Upload Photo 3</span>
                  <input type="file" name="img3" id="img3" onBlur="CheckImg3(); return false;" autocomplete="off"  required>
                 </label>
-          
+                
+                <input type="hidden" name="latitude" id="latitude" value="">
+               <input type="hidden" name="longitude" id="longitude" value="">
                
             </div>
 
             <div class="form-row" style="width:50%;">
-                <button type="submit" value="Submit" >Submit</button>
+                <button type="submit" value="Submit" id="btn" >Submit</button>
             </div>		
         </form>
 </div>
@@ -156,9 +158,24 @@
     			
     		});
     }
-    
     </script>
-    
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAae9SU_6aO359OSvLrFEx27cs4ervdYDU&callback=initMap"></script>
+     <script>
+        function getLatLong() {
+        	  var city =document.getElementById( "city" ).value;
+        	  var area =document.getElementById( "subcategory" ).value;
+        	  var state =document.getElementById( "subcategory1" ).value;
+        	  var address=area+" "+city+" "+" "+state;
+            geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+            'address': address
+            }, function(results, status) {      
+                document.getElementById("latitude").value=results[0].geometry.location.lat();    
+                document.getElementById("longitude").value=results[0].geometry.location.lng();        
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
 <script src="js/registrationForm.js" type="text/javascript"></script>  
 <script src="js/dynamicdropdown.js" type="text/javascript"></script>
 </body>

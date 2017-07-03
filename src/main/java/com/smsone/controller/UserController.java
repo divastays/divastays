@@ -1,3 +1,5 @@
+
+
 package com.smsone.controller;
 
 import java.io.IOException;
@@ -138,9 +140,9 @@ public class UserController {
 	//save house
 		@RequestMapping(value = "/saveHouse",method = RequestMethod.POST)
 		public String saveHouse(@RequestParam("ownerId")Long oId,@RequestParam("tenancyType")String tenancyType,@RequestParam("room")Integer room,@RequestParam("city")String city,@RequestParam("subcategory1")String state,@RequestParam("rent")Double rent,@RequestParam("area")Double area,@RequestParam("img1")MultipartFile img1,@RequestParam("img2")MultipartFile img2,@RequestParam("houseName")String houseName,@RequestParam("floorNumber")Integer floorNumber,
-		@RequestParam("address")String address,@RequestParam("subcategory")String locationArea,@RequestParam("subcategory2")String country,@RequestParam("deposit")Double deposit,@RequestParam("foodPreference")String foodPreference,@RequestParam("img3")MultipartFile img3,Model model) throws IOException,SerialException
+		@RequestParam("address")String address,@RequestParam("subcategory")String locationArea,@RequestParam("subcategory2")String country,@RequestParam("deposit")Double deposit,@RequestParam("foodPreference")String foodPreference,@RequestParam("latitude")Double latitude,@RequestParam("longitude")Double longitude,@RequestParam("img3")MultipartFile img3,Model model) throws IOException,SerialException
 		{
-			System.out.println(oId);
+			System.out.println(latitude);
 			House house=new House();
 			house.setAddress(address);
 			house.setArea(area);
@@ -154,6 +156,8 @@ public class UserController {
 			house.setCountry(country);
 			house.setLocationArea(locationArea);
 			house.setTenancyType(tenancyType);
+			house.setLatitude(latitude);
+			house.setLongitude(longitude);
 			byte[] img11 = img1.getBytes();
 			byte[] img13 = img2.getBytes();
 			byte[] img12 = img3.getBytes();
@@ -642,13 +646,16 @@ public class UserController {
 					return "";
 				}
 				
-				
-				
-@RequestMapping(value="/showLatLang")
-public String showLat()
-{
-	return "LatLang";
-}
+              @RequestMapping(value="/showLatLang")
+              public String showLat()
+              {
+	                return "LatLang";
+              }
+              @RequestMapping(value="/showLat1")
+              public String showLat1()
+              {
+	                return "MapTry";
+              }
 }				
 				
 				

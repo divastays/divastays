@@ -26,7 +26,7 @@ public class Owner implements Serializable
 	private String firstName;
 	@Column(nullable=false,length=20)
 	private String lastName;
-	@Column(nullable=false,length=20)
+	@Column(nullable=false,length=30)
 	private String email;
 	@Column(nullable=false,length=12,unique = true)
 	private Long aadharNumber;

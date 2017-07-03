@@ -400,11 +400,13 @@
  </c:forEach>
        <tag:paginate max="15" offset="${offset}" count="${count}"
 			uri="${url}" next="&raquo;" previous="&laquo;" />
+			<div id="dvMap" style="width: 100%; height:500px;"></div>
+			<br><br>
  </div><!--colm 9 closed-->
  </div><!--2)-->
      </div><!--1)-->
         <!-- /.sidebar column end here -->
-          <div id="dvMap" style="width: 100%; height:500px; margin-top:10%;"></div>
+          
  <script type="text/javascript">
  var markers = [
 	 <c:forEach var="s" items="${house}">

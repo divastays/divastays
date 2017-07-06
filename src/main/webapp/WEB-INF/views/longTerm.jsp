@@ -219,40 +219,13 @@
                 	  <div class="row">
                          <form role="form" action="showFilter1" method="post">
                     
-                   <div class="col-md-3">
-                       <div class="form-group">
-                           <label class="sr-only" for="guest">Guest</label>
-                          	
-                          <select id="city"  class="form-control" name="city">
-                              <option value="Ahmednagar">Ahmednagar</option>
-                              <option value="Akola">Akola</option>
-                              <option value="Sangli">Sangli	</option>
-                              <option value="Satara">Satara	</option>
-							  <option value="Sindhudurg">Sindhudurg</option>
-                              <option value="Solapur">Solapur	</option>
-                              <option value="Thane">Thane	</option>
-                              <option value="Wardha">Wardha	</option>
-                              <option value="Washim">Washim	</option>
-                              <option value="Yevtmal">Yevtmal	</option>
-                              <option value="Palghar">Palghar	</option>                              
-                          </select>  
-                       </div>
-                      </div>
-                      <div class="col-md-3">
+                  <div class="col-md-2"></div>
+                      <div class="col-md-5">
                         <div class="form-group">
                           <label class="sr-only" for="location">Location</label>
                           <input type="text" class="form-control" name="address" id="address" placeholder="Where ?"/>
                         </div>
                         </div>
-        
-                        <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="sr-only" for="guest">Guest</label>
-                          <select id="guest" name="guest" class="form-control">
-                              <option value="Girls">Girls</option>
-                          </select>
-                        </div>
-                      </div>
                
                       <div class="col-md-1">
                       <button type="submit" class="btn btn-info">Search</button>

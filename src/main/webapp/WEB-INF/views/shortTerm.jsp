@@ -219,11 +219,11 @@
                     
                     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12 col-md-offset-1">
               <div class="form-section">
                 <div class="row">
                     <form role="form" action="showFilter1">
-                      <div class="col-md-3">
+                      <div class="col-md-4">
                         <div class="form-group">
                           <label class="sr-only" for="location">Location</label>
                           <input type="text" name="address" class="form-control" id="address" placeholder="Where ?">
@@ -247,18 +247,10 @@
        				 		<input class="form-control" id="dpd2" name="dpd2" placeholder="Check Out" type="text"/>
       					 </div>
       				</div>
-                      <div class="col-md-2">
-                        <div class="form-group">
-                          <label class="sr-only" for="guest">Guest</label>
-                          <select id="guest" name="guest" class="form-control">
-                              <option value="1">Girls</option>
-                           
-                          </select>
-                        </div>
-                      </div>
+                    
                
                       <div class="col-md-2">
-                      <button class="btn btn-info">Search</a>
+                      <button class="btn btn-info">Search</button>
                        
                       
                        <!--<button type="submit" class="btn btn-default btn-primary">Search</button>-->

@@ -141,7 +141,7 @@
       </ul>
     
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="showOwnerPage">House Owner</a></li>
+      <li><a href="showOwnerPage"><font color="#0000000">House Owner</font></a></li>
          <% 
         String email =  (String)session.getAttribute("email");
         if(email!=null)
@@ -152,7 +152,7 @@
          {
         %>
             <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><font color="#0000000">Login</font></b> <span class="caret"></span></a>
 			<ul id="login-dp" class="dropdown-menu">
 				<li>
 					 <div class="row">
@@ -172,7 +172,7 @@
 										<div class="form-group">
 											 <label class="sr-only" for="exampleInputPassword2">Password</label>
 											 <input type="password" name="password" class="form-control" id="password"  placeholder="Password" required>
-                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                             <div class="help-block text-right"><a href=""><font color="#0000000">Forget the password ?</font></a></div>
                                              <span id="empIdErr" class="errMsg"></span>
 										</div>
 										<div class="form-group">
@@ -186,7 +186,7 @@
 								 </form>
 									</div>
 							<div class="bottom text-center">
-								New here ? <a href="showUserReg"><b>Join Us</b></a>
+								New here ? <a href="showUserReg"><font color="#0000000"><b>Join Us</font></b></a>
 							</div>
 					 </div>
 				</li>
@@ -195,7 +195,7 @@
         <%
         }
         %>	 									
-        <li><a href="showHelp">Help</a></li>
+        <li><a href="showHelp"><font color="#0000000">Help</font></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -286,7 +286,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="margin-top-0 text-primary">DivaStays For All Your Needs</h2>
+                    <h2 class="margin-top-0 ">DivaStays For All Your Needs</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -385,7 +385,7 @@
     
 <div class="jumbotron">
   <div class="container text-center">
-   <h2 class="margin-top-0 text-primary">Best Places</h2>
+   <h2 class="margin-top-0 ">Best Places</h2>
    <hr class="primary">
 	 <div class="row">
      <div class="col-lg-4 col-md-4 text-center">
@@ -422,7 +422,7 @@
 		<section class="container-fluid" id="four">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                <h2 class="text-center text-primary">Features</h2>
+                <h2 class="text-center ">Features</h2>
                 <hr>
                 <div class="media wow fadeInRight">
                     <h3>Simple</h3>

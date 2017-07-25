@@ -6,7 +6,7 @@
     height: 50px;
 }
 .info-sec {
-    color: #fff;
+    color: #;
 }
 .quick-info li i {
     font-size: 8px;
@@ -49,7 +49,7 @@
 }
 
 .quick-info li a{
-    color: #fff;
+    color: #000000;
 }
 .site-link, .site-link:hover, .site-link:focus
 {
@@ -75,7 +75,7 @@
     }
     .medi-info {
     border: 0px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000000;
     }
     .service-info{
         margin-top: 20px;

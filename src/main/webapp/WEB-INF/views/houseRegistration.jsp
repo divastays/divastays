@@ -17,7 +17,7 @@
 			<div class="form-row" style="float:left; width:50%;">
                 <label>
                     <span>Owner ID</span>
-                    <input type="text" name="ownerId" id="ownerId" value="${oId}">
+                    <input type="text" name="ownerId" id="ownerId" value="${oId}" readonly>
                 </label>
                    <label>
                     <span>Tenancy Type</span>

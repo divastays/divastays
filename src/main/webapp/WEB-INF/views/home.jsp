@@ -130,7 +130,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="showHome"><b>DivaStays</a>
+      <a class="navbar-brand" href="showHome"><b><font color="#0000000">DivaStays</font></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
